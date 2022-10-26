@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Raleway;
+    src: url("/reporting/orbitui/resources/Font/font/raleway-thin-0da2e90cf6205e3fa6adc3d2378c474f.eot?#iefix") format("embedded-opentype"), url("/reporting/orbitui/resources/Font/font/raleway-thin-853cc2d80ab72d6a0ac1f8ecbc5f50c6.woff") format("woff"), url("/reporting/orbitui/resources/Font/font/raleway-thin-196e4d4ee33ca51eb5c1bcee792e2842.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/font/raleway-thin-b5efc3db2713f194231acbd9dd6ca151.svg#ralewaythin") format("svg");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("font/raleway-extralight.eot?#iefix") format("embedded-opentype"), url("font/raleway-extralight.woff") format("woff"), url("font/raleway-extralight.ttf") format("truetype"), url("font/raleway-extralight.svg#ralewayextralight") format("svg");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("font/raleway-light.eot?#iefix") format("embedded-opentype"), url("font/raleway-light.woff") format("woff"), url("font/raleway-light.ttf") format("truetype"), url("font/raleway-light.svg#ralewaylight") format("svg");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/reporting/orbitui/resources/Font/font/raleway-regular-d003da0078843bef358483adaf001e6e.eot?#iefix") format("embedded-opentype"), url("/reporting/orbitui/resources/Font/font/raleway-regular-e2a42f14d410966808fa3e1a6c6610ed.woff") format("woff"), url("/reporting/orbitui/resources/Font/font/raleway-regular-044df6936074fbef1e2a0bb83f9be9ed.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/font/raleway-regular-f6b9825af4a3f7829e92223745158c00.svg#ralewayregular") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/reporting/orbitui/resources/Font/font/raleway-medium-cb960b7985a829ff8f35f27917c37c16.eot?#iefix") format("embedded-opentype"), url("/reporting/orbitui/resources/Font/font/raleway-medium-345ce78497f8fd8cc6ca3e5f87fae51b.woff") format("woff"), url("/reporting/orbitui/resources/Font/font/raleway-medium-a450c35bf2fb797c59521976c251816a.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/font/raleway-medium-2de4e4d192f6abf54a11f233e56b40e9.svg#ralewaymedium") format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/reporting/orbitui/resources/Font/font/raleway-semibold-996ba4ecf6030f166bfd2865ba2007c2.eot?#iefix") format("embedded-opentype"), url("/reporting/orbitui/resources/Font/font/raleway-semibold-ca59bf4cefe8b05a5c874bfdf6a2de0f.woff") format("woff"), url("/reporting/orbitui/resources/Font/font/raleway-semibold-4601b5909c48d8741187ef047135d5a5.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/font/raleway-semibold-d06b8f232eebdbed60a552416f4a0599.svg#ralewaysemibold") format("svg");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("font/raleway-bold.eot?#iefix") format("embedded-opentype"), url("font/raleway-bold.woff") format("woff"), url("font/raleway-bold.ttf") format("truetype"), url("font/raleway-bold.svg#ralewaybold") format("svg");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("font/raleway-extrabold.eot?#iefix") format("embedded-opentype"), url("font/raleway-extrabold.woff") format("woff"), url("font/raleway-extrabold.ttf") format("truetype"), url("font/raleway-extrabold.svg#ralewayextrabold") format("svg");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("font/raleway-heavy.eot?#iefix") format("embedded-opentype"), url("font/raleway-heavy.woff") format("woff"), url("font/raleway-heavy.ttf") format("truetype"), url("font/raleway-heavy.svg#ralewayheavy") format("svg");
+    font-weight: 900;
+    font-style: normal;
+}

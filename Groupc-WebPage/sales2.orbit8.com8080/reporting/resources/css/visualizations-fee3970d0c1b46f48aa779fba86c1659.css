@@ -1,0 +1,112 @@
+.visualizations {
+    /* background-color: #fff; */
+    /*  background-color:#ededed */
+    text-shadow: #fff 0 1px 0;
+    position: relative;
+    display: block;
+    height: auto;
+}
+
+.visualizations div.visualization img {
+    margin-bottom: 1px;
+}
+
+.visualizations div.visualization {
+    float: left;
+    padding: 10px 2px;
+    margin: 2px;
+    text-align: center;
+    line-height: 10px;
+    color: #333;
+    font-size: 11px;
+    /* font-family: Arial; */
+    height: 82px;
+    width: 73px;
+    overflow: hidden;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    /* float: left;
+    padding: 17px 8px;
+    margin: 4px;
+   margin: 10px 0 0 25px;
+    text-align: center;
+    line-height: 12px;
+    color: #333;
+    font-size: 10px;
+    font-family: "Helvetica Neue",sans-serif;
+    height: 80px;
+    width: 75px;
+    overflow: hidden;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    background-color:#ededed */
+}
+
+.x-ie6 .visualizations div.visualization,
+.x-ie7 .visualizations div.visualization,
+.x-ie8 .visualizations div.visualization {
+    border-top: none;
+    padding: 3px 2px;
+    margin: 2px;
+}
+
+.visualizations div.visualization-hover {
+    background-color: #f5f5f5;
+}
+
+.visualizations .x-item-selected {
+    background-color: #D3E1F1 !important;
+    /* background-color: #5fa2dd !important; */
+}
+
+.visualizations div.visualization strong {
+    color: #000;
+    display: block;
+}
+
+.visualizations div.visualization span {
+    /* color: #999; */
+    color: #000;
+    /*  background-color:#dedede; */
+    display: block;
+}
+
+.visualizations div.disableditem {
+    float: left;
+    padding: 10px 2px;
+    margin: 2px;
+    text-align: center;
+    line-height: 10px;
+    color: #333;
+    font-size: 11px;
+    /* font-family: Arial; */
+    height: 82px;
+    width: 73px;
+    overflow: hidden;
+    border-top: 1px solid transparent;
+    opacity: 0.3 !important;
+}
+
+.visualizations div.disableditem img {
+    margin-bottom: 1px;
+}
+
+.x-ie6 .visualizations div.disableditem,
+.x-ie7 .visualizations div.disableditem,
+.x-ie8 .visualizations div.disableditem {
+    border-top: none;
+    padding: 3px 2px;
+    margin: 2px;
+}
+
+.visualizations div.disableditem strong {
+    color: #000;
+    display: block;
+}
+
+.visualizations div.disableditem span {
+    /* color: #999; */
+    color: #000;
+    /*  background-color:#dedede; */
+    display: block;
+}

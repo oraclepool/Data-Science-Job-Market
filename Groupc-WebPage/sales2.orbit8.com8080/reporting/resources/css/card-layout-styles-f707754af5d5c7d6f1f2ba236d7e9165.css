@@ -1,0 +1,491 @@
+.whit-card-simple {
+    width: 100%;
+    background: #ffffff;
+    border: solid 1px #dadada;
+    font-family: Helvetica Neue, Helvetica, Arial, " sans-serif";
+    float: left;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    margin-top: 5PX;
+}
+
+.whit-card-simple-headding {
+    font-size: 14px;
+    float: left;
+    padding: 15px 6%;
+    border-bottom: solid 1px #dadada;
+    width: 100%;
+}
+
+.whit-card-simple-headding-txt {
+    float: left;
+}
+
+.whit-card-simple-headding-icon {
+    float: right;
+}
+
+.whit-card-simple-value {
+    padding: 15px 6%;
+    width: 100%;
+    float: left;
+}
+
+.whit-card-simple-value-txt-box {
+    width: 70%;
+    float: left;
+    font-family: Helvetica Neue, Helvetica, Arial, " sans-serif";
+}
+
+.whit-card-simple-value-txt-main-value {
+    font-size: 30px;
+    font-weight: bold;
+    color: #299dcd;
+}
+
+.whit-card-simple-value-txt-lable {
+    font-size: 13px;
+    color: #707070;
+}
+
+.whit-card-simple-value-icon {
+    font-size: 40px;
+    text-align: right;
+    color: #1cb2ff;
+}
+
+.whit-card-simple.whit-card-icon-left .whit-card-simple-value-txt-box {
+    float: right
+}
+
+.whit-card-simple.whit-card-icon-left .whit-card-simple-value-icon {
+    float: left
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-headding {
+    font-size: 14px;
+    float: left;
+    padding: 10px 2%;
+    border-bottom: solid 1px #dadada;
+    width: 100%;
+}
+
+.whit-card-simple.whit-card-mtly-values {
+    display: table !important;
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-value {
+    padding: 15px 2%;
+    width: 100%;
+    display: table;
+    padding-top: 0px;
+    background-color: #fff;
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-value-txt-lable {
+    font-size: 13px;
+    color: #707070;
+    margin-top: 10px;
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-value-txt-box:LAST-CHILD {
+    border-right: none !important
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-value-txt-box {
+    float: left;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    border-right: solid 1px #dadada;
+    margin-top: 20px;
+    min-width: 188px
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-value-txt-box:last-child {
+    border-right: none;
+}
+
+.whit-card-simple.whit-card-mtly-values .whit-card-simple-value-icon {
+    display: none;
+}
+
+.color-card-simple {
+    width: 100%;
+    background: #00acac;
+    border: solid 1px #dadada;
+    font-family: Helvetica Neue, Helvetica, Arial, " sans-serif";
+    float: left;
+    border-radius: 3px;
+}
+
+.color-card-simple-headding {
+    font-size: 14px;
+    float: left;
+    padding: 15px 6%;
+    border-top: solid 1px #92dbdb;
+    width: 88%;
+}
+
+.color-card-simple-headding-txt {
+    float: left;
+    color: #92dbdb
+}
+
+.color-card-simple-headding-icon {
+    float: right;
+}
+
+.color-card-simple-value {
+    padding: 15px 6%;
+    width: 88%;
+    float: left;
+}
+
+.color-card-simple-value-txt-box {
+    width: 70%;
+    float: left;
+    font-family: Helvetica Neue, Helvetica, Arial, " sans-serif";
+}
+
+.color-card-simple-value-txt-main-value {
+    font-size: 30px;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.color-card-simple-value-txt-lable {
+    font-size: 13px;
+    color: #92dbdb;
+}
+
+.color-card-simple-value-icon {
+    font-size: 50px;
+    text-align: right;
+    color: #92dbdb;
+}
+
+.color-card-simple.whit-card-icon-left .color-card-simple-value-txt-box {
+    float: right
+}
+
+.color-card-simple.whit-card-icon-left .color-card-simple-value-icon {
+    float: left
+}
+
+.color-card-simple.whit-card-mtly-values .color-card-simple-value-txt-box {
+    float: left;
+    width: 49.5%;
+    text-align: center;
+    border-right: solid 1px #dadada;
+}
+
+.color-card-simple.whit-card-mtly-values .color-card-simple-value-txt-box:last-child {
+    border-right: none;
+}
+
+.color-card-simple.whit-card-mtly-values .color-card-simple-value-icon {
+    display: none;
+}
+
+.color-card-square {
+    width: 100%;
+    height: 110px;
+    background-color: #75c181;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    padding-top: 20px;
+    font-family: Helvetica Neue, Helvetica, Arial, " sans-serif";
+    margin-top: 5px;
+}
+
+.color-card-square:first-child {
+    margin-left: 5px;
+}
+
+.color-card-square-value-icon {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.color-card-square-value-txt-main-value {
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.color-card-square-value-txt-lable {
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.card-strip-cnt {
+    /*height: 100%;*/
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.dashboard-view-mode .card-strip-cnt {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-strip-item {
+    cursor: pointer;
+    flex: 1 1 250px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.card-strip-item:last-child {
+    border-right: none !important;
+}
+
+.card-strip-act-icons {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    display: none
+}
+
+.card-strip-act-icons a {
+    color: #73879c
+}
+
+.card-strip-act-icons a:hover {
+    color: #2687ec
+}
+
+.card-strip-cnt:hover .card-strip-act-icons {
+    display: block
+}
+
+.card-strip {
+    margin: 0px;
+    /* background-color: #f7f7f7; */
+    background: #ffffff;
+    min-height: 130px;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: Helvetica Neue, Helvetica, Arial, " sans-serif";
+    float: left;
+}
+
+.card-strip li {
+    list-style: none;
+    float: left;
+    padding: 0px 20px;
+    border-right: #adb2b5 solid 2px;
+}
+
+.card-strip-item-value-txt-box {
+    width: 100% !important;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card-strip li:LAST-CHILD {
+    border-right: none;
+}
+
+.card-strip-item {
+    float: left;
+    /*  border-right: solid 2px #73879c; */
+    background-color: #ffffff;
+    /* webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+	-moz-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+	box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08); */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card-strip-item-headding-txt {
+    color: #333333;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.card-strip-item-txt-main-value {
+    font-weight: bold;
+    font-size: 45px;
+    color: #333333;
+    margin-top: 15px;
+    height: 35px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.card-strip-item-value-dtl {
+    color: #73879c;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.strip-valu-inc {
+    color: #29ba9c;
+}
+
+.strip-valu-dec {
+    color: #e44d42;
+}
+
+.card-dataview-cnt {}
+
+.card-basic-0 {
+    min-width: 200px;
+    float: left;
+    margin-right: 5px;
+}
+
+.card-basic-0-innr-cnt {
+    background: #f7f7f7;
+    max-width: 300px;
+    height: 100px;
+    padding-top: 50px;
+    border: #eae8e8 solid 1px;
+    border-radius: 3px;
+}
+
+.card-dataview-cnt .card-basic-0-innr-cnt {
+    background: #ffffff;
+    height: 120px;
+}
+
+.card-basic-0-value {
+    color: #74879b;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-dataview-cnt .card-basic-0 {
+    width: 98% !important;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+}
+
+.card-dataview-cnt .card-strip-item {
+    width: 98%;
+    border-right: 0px !important;
+    background: #ffffff;
+    border: solid 1px #dadada;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
+    margin-bottom: 5px;
+    margin-top: 9px;
+    border-radius: 3px;
+    height: 115px;
+}
+
+.card-dataview-cnt .card-strip-item-txt-main-value {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.color-card-simple-cnt {
+    min-width: 300px;
+    float: left;
+    margin-right: 5px;
+}
+
+.color-card-square-cnt {
+    min-width: 200px;
+    float: left;
+    margin-right: 5px;
+}
+
+.whit-card-simple-cnt {
+    float: left;
+    margin-right: 5px;
+}
+
+.card-dataview-cnt .whit-card-simple-value-txt-main-value {
+    margin-bottom: 10px;
+}
+
+.card-dataview-cnt .color-card-simple-cnt {
+    min-width: 98%;
+}
+
+.card-dataview-cnt .color-card-square-cnt,
+.card-dataview-cnt .whit-card-simple-cnt {
+    min-width: 98%;
+}
+
+.card-dataview-cnt .color-card-square:first-child {
+    margin-left: 0px;
+}
+
+.card-tpl-select .card-basic-0,
+.card-tpl-select .color-card-simple,
+.card-tpl-select .color-card-square,
+.card-tpl-select .card-strip-item,
+.card-tpl-select .whit-card-simple {
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(224, 52, 29, 1);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(224, 52, 29, 1);
+    box-shadow: 0px 0px 3px 0px rgba(224, 52, 29, 1);
+    border: solid #ff6b55 1px !important;
+}
+
+.simple-card {
+    background-color: #fff;
+    width: auto;
+    float: left;
+    margin-right: 5px;
+    min-width: 300px;
+    height: 150px;
+    position: relative;
+    text-align: center;
+}
+
+.card-inr-layout {
+    text-align: left;
+    line-height: normal;
+    vertical-align: middle;
+    top: 25%;
+    transform-origin: 0 0;
+    position: relative;
+}
+
+.card-value-name {
+    background-color: #fff;
+    width: auto;
+    float: left;
+    margin-right: 5px;
+}
+
+.card-main-title {
+    font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.card-main-value {
+    font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.card-main-title-center {
+    font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center
+}

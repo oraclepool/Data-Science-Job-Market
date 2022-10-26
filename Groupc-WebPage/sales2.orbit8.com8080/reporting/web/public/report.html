@@ -1,0 +1,1775 @@
+<!DOCTYPE HTML>
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=10; IE=11;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" href='/reporting/resources/images/ORBIT-fav-56df84ea30c3670abe7e32a8b9d25670.ico'>
+    <link rel="shortcut icon" href='/reporting/resources/images/ORBIT-fav-ea91f9abc02f532ec94ed09ea2c693ab.png'>
+
+    <title>ORBIT Analytics</title>
+
+    <style type="text/css">
+        ::-webkit-scrollbar-track {
+            background: #EAEAEC;
+            border-radius: 20px;
+        }
+
+        .x-window-body-default::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Turn on a 13x13 scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 10px !important;
+            height: 10px !important;
+            cursor: context-menu;
+        }
+
+        ::-webkit-scrollbar-button:vertical {
+            background-color: red;
+        }
+
+        .x-window-body.x-window-body-default .x-panel-default .x-panel-default ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+
+        /* Turn on single button up on top, and down on bottom */
+
+        ::-webkit-scrollbar-button:start:decrement,
+        ::-webkit-scrollbar-button:end:increment {
+            display: block;
+        }
+
+        /* Turn off the down area up on top, and up area on bottom */
+
+        ::-webkit-scrollbar-button:vertical:start:increment,
+        ::-webkit-scrollbar-button:vertical:end:decrement {
+            display: none;
+        }
+
+        /* Place The scroll down button at the bottom */
+
+        ::-webkit-scrollbar-button:vertical:increment {
+            background-color: #EAEAEC;
+            height: 10px;
+        }
+
+        /* Place The scroll up button at the up */
+
+        ::-webkit-scrollbar-button:vertical:decrement {
+            background-color: #EAEAEC;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-button:horizontal:increment {
+            background-color: #C1C0C0;
+            width: 10px;
+            border-radius: 5px
+        }
+
+        /* Place The scroll up button at the up */
+
+        ::-webkit-scrollbar-button:horizontal:decrement {
+            background-color: #C1C0C0;
+            width: 10px;
+            display: none !important;
+        }
+
+        ::-webkit-scrollbar-track:vertical {
+            background-color: blue;
+        }
+
+        /* Bottom area below thumb and down button */
+
+        /* Track below and above */
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #EAEAEC;
+            border-radius: 5px
+        }
+
+        /* The thumb itself */
+
+        ::-webkit-scrollbar-thumb:vertical {
+            height: 50px;
+            background-color: #C1C0C0;
+            border-radius: 5px
+        }
+
+        /* Place The scroll down button at the bottom */
+
+        ::-webkit-scrollbar-button:vertical:end:increment {
+            display: none;
+        }
+
+        /* Place The scroll up button at the up */
+
+        ::-webkit-scrollbar-button:vertical:start:decrement {
+            display: none !important;
+        }
+
+        /* Place The scroll down button at the bottom */
+
+        ::-webkit-scrollbar-button:horizontal:end:increment {
+            display: none !important;
+        }
+
+        /* Place The scroll up button at the up */
+
+        ::-webkit-scrollbar-button:horizontal:start:decrement {
+            display: none !important;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal {
+            width: 30px;
+            background-color: #C1C0C0;
+            border-radius: 5px
+        }
+
+        /* Corner */
+
+        ::-webkit-scrollbar-corner:vertical {
+            background-color: black;
+        }
+
+        /* Resizer */
+
+        ::-webkit-scrollbar-resizer:vertical {
+            background-color: gray;
+        }
+
+        < !--Loading Splash Screen Style --><style type="text/css">#loading-mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 30000;
+            /* background-color: #3892d3; */
+        }
+
+        #loading-parent {
+            position: absolute;
+            z-index: 30001;
+            /* height: 100%; */
+            width: 98%;
+            top: 45%;
+            /* color: white; */
+        }
+
+        .loading-mask-title {
+            color: #cccaca;
+            /* line-height: 17px; */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+        }
+    </style>
+
+
+
+
+
+    <link id="customWidgetIconsCss" rel="stylesheet" href='/reporting/web/runtime/orbit-widgets.css'>
+    <script src='/reporting/web/runtime/orbit-labels'></script>
+
+    <!-- Add the pace option library only when the request is not for Screen Capture  -->
+
+    <script type="text/javascript">
+        window.paceOptions = {
+            ajax: {
+                trackMethods: ['GET', 'POST', 'PUT', 'DELETE', 'REMOVE']
+            },
+            restartOnRequestAfter: true
+        };
+    </script>
+    <script src='/reporting/resources/js/pace.min-378d6fade425088cc1e7a6967b18a2ad.js'></script>
+    <link rel="stylesheet" href='/reporting/resources/css/pace-theme-minimal-3f87e8bc1b7fefebd7f501cfc3065edc.css'>
+
+
+    <script src='/reporting/resources/js/token-auth-852456ab120107cb5331c67753e63227.js'></script>
+
+    <script type="text/javascript">
+        var buildVersion = "34d3df2930cd1485018d1063bb8a4a77020b6e2f";
+
+        var reportLink = "true";
+        var orbitLaunchLink = "false";
+
+        var embeddedReportLink = "true";
+
+        var jotToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcmJpdCIsImV4cCI6MTY5NjU1MDQzOCwiaWF0IjoxNjY1MDE0NDM4fQ.Fb8Uslt8yDLR_or1f-MfoVqTDHGSRD8RVbJ_G1JuLBC4chThwuSUjOUBeVf3ffbO8SuXhpOyC5k0-6JdQK0kNQ";
+
+        var OH = "false";
+        var FR = "true";
+        var AR = "true";
+
+        var externalReportParams = '';
+
+        var languageKey = "";
+        if (languageKey) {
+            document.cookie = "ln=" + languageKey + ";path=/;";
+        }
+        var fromPortalValue = "true";
+        var isDb = "true";
+
+        var isScreenshot = "false";
+
+        var pubType = "";
+
+        var contextPath = '/reporting';
+        var domain = 'sales2.orbit8.com';
+        var tokenReportId = "945558";
+
+        var navigationFromOrbit = true;
+        if (fromPortalValue && fromPortalValue == 'true') {
+            navigationFromOrbit = false;
+        }
+
+        if (embeddedReportLink && embeddedReportLink == 'true') {
+            embeddedReportLink = true;
+        } else {
+            embeddedReportLink = false;
+        }
+
+        var navigationFromExcel = null;
+
+
+
+        navigationFromExcel = false;
+
+
+
+
+
+        var sessionTimeOutVal = "";
+        if (sessionTimeOutVal && (reportLink === '' || orbitLaunchLink)) {
+            localStorage.setItem('sessionTimeOut', sessionTimeOutVal);
+        }
+
+        if (jotToken && (reportLink === '' || orbitLaunchLink)) {
+            localStorage.setItem('X-Auth-Token', jotToken);
+        }
+
+        var isPrivateLink = null;
+        isPrivateLink = "false";
+        if (isPrivateLink && (isPrivateLink == true || isPrivateLink == 'true')) {
+            isPrivateLink = true;
+        } else {
+            isPrivateLink = false;
+        }
+
+        if (navigationFromOrbit == true) {
+            isPrivateLink = null;
+        }
+
+        var accessTokenVal = "2a2d9f6b-f97b-47bc-b1d2-9b2c4a44571d";
+
+        var loggedInUserName = "";
+        if (loggedInUserName && loggedInUserName.length == 0 && reportLink === '') {
+            loggedInUserName = localStorage.loggedInUserName;
+        }
+
+
+        swapAuthStorage();
+
+        var Ext = Ext || {}; // Ext namespace won't be defined yet...
+        // This function is called by the Microloader after it has performed basic
+        // device detection. The results are provided in the "tags" object. You can
+        // use these tags here or even add custom tags. These can be used by platform
+        // filters in your manifest or by platformConfig expressions in your app.
+        //
+        Ext.beforeLoad = function(tags) {
+            var s = location.search, // the query string (ex "?foo=1&bar")
+                profile;
+            try {
+                if (localStorage.getItem("isLocked") == true || localStorage.getItem("isLocked") == "true") {
+                    // window.location.href = 'applogout';
+                    tokenLogout();
+                }
+            } catch (e) {
+
+            }
+            // For testing look for "?classic" or "?modern" in the URL to override
+            // device detection default.
+            //
+            document.write('<link rel="stylesheet" href="/reporting/resources/css/orbit-shared-styles-60ea0e38db6fe3e99857828e2268664a.css"/>');
+
+            if (s.match(/\bclassic\b/)) {
+                profile = 'classic';
+                document.write('<link rel="stylesheet" href="/reporting/resources/css/orbit-classic-custom-styles-f98a827c3b06cfe8e6ac106479536573.css"/>');
+            } else if (s.match(/\bred\b/)) {
+                profile = 'red';
+                document.write('<link rel="stylesheet" href="/reporting/resources/css/orbit-red-custom-styles-cfdfde9cab99d4872c2aa4faa5c09ebc.css"/>');
+            } else if (s.match(/\bmodern\b/)) {
+                profile = 'modern';
+            } else if (s.match(/\btriton\b/)) {
+                profile = 'triton';
+                document.write('<link rel="stylesheet" href="/reporting/resources/css/orbit-styles-1abd60b3b9f3f43d43082afd7734d8fa.css"/>');
+            } else if (s.match(/\bexcel\b/)) {
+                profile = 'classic';
+                document.write('<link rel="stylesheet" href="/reporting/resources/css/orbit-classic-custom-styles-f98a827c3b06cfe8e6ac106479536573.css"/>');
+                // document.write('<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript" />');
+            } else {
+                profile = tags.phone ? 'modern' : 'classic';
+                document.write('<link rel="stylesheet" href="/reporting/resources/css/orbit-classic-custom-styles-f98a827c3b06cfe8e6ac106479536573.css"/>');
+            }
+
+            //var lang ="en";
+            Ext.manifest = 'orbitui/' + profile; //+'-'+lang; // this name must match a build profile name
+
+            // This function is called once the manifest is available but before
+            // any data is pulled from it.
+            //
+            //return function (manifest) {
+            // peek at / modify the manifest object
+            //};
+
+        };
+    </script>
+
+
+    <!-- GoJs stuff -->
+    <script type="text/javascript" src='/reporting/resources/js/go-d28eb15fcb73f6a0861dd247e6dbe661.js'></script>
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="e6a346fa-360d-4271-97f7-2a6bc49a1248" type="text/javascript">
+        var Ext = Ext || {};
+        Ext.manifest = Ext.manifest || '../../orbitui/classic.json';
+        Ext = Ext || {};
+        Ext.Boot = Ext.Boot || function(emptyFn) {
+            function Request(cfg) {
+                if (cfg.$isRequest) return cfg;
+                cfg = cfg.url ? cfg : {
+                    url: cfg
+                };
+                var url = cfg.url;
+                url = url.charAt ? [url] : url;
+                var charset = cfg.charset || Boot.config.charset;
+                _apply(this, cfg);
+                delete this.url;
+                this.urls = url;
+                this.charset = charset
+            }
+
+            function Entry(cfg) {
+                if (cfg.$isEntry) return cfg;
+                var charset = cfg.charset || Boot.config.charset,
+                    manifest = Ext.manifest;
+                manifest = manifest && manifest.loader;
+                var cache = void 0 !== cfg.cache ? cfg.cache : manifest && manifest.cache,
+                    buster;
+                Boot.config.disableCaching &&
+                    (void 0 === cache && (cache = !Boot.config.disableCaching), !1 === cache ? buster = +new Date : !0 !== cache && (buster = cache), buster && (manifest = manifest && manifest.cacheParam || Boot.config.disableCachingParam, buster = manifest + '\x3d' + buster));
+                _apply(this, cfg);
+                this.charset = charset;
+                this.buster = buster;
+                this.requests = []
+            }
+            var doc = document,
+                _emptyArray = [],
+                _config = {
+                    disableCaching: /[?&](?:cache|disableCacheBuster)\b/i.test(location.search) || !/http[s]?:/i.test(location.href) || /(^|[ ;])ext-cache=1/.test(doc.cookie) ? !1 : !0,
+                    disableCachingParam: '_dc',
+                    loadDelay: !1,
+                    preserveScripts: !0,
+                    charset: 'UTF-8'
+                },
+                cssRe = /\.css(?:\?|$)/i,
+                resolverEl = doc.createElement('a'),
+                isBrowser = 'undefined' !== typeof window,
+                _environment = {
+                    browser: isBrowser,
+                    node: !isBrowser && 'function' === typeof require,
+                    phantom: window && (window._phantom || window.callPhantom) || /PhantomJS/.test(window.navigator.userAgent)
+                },
+                _tags = Ext.platformTags = {},
+                _apply = function(object, config, defaults) {
+                    defaults && _apply(object, defaults);
+                    if (object && config && 'object' === typeof config)
+                        for (var i in config) object[i] = config[i];
+                    return object
+                },
+                _merge = function() {
+                    var lowerCase = !1,
+                        obj = Array.prototype.shift.call(arguments),
+                        index, i;
+                    'boolean' === typeof arguments[arguments.length - 1] && (lowerCase = Array.prototype.pop.call(arguments));
+                    var len = arguments.length;
+                    for (index = 0; index < len; index++) {
+                        var value = arguments[index];
+                        if ('object' === typeof value)
+                            for (i in value) obj[lowerCase ? i.toLowerCase() : i] = value[i]
+                    }
+                    return obj
+                },
+                _getKeys = 'function' == typeof Object.keys ? function(object) {
+                    return object ? Object.keys(object) : []
+                } : function(object) {
+                    var keys = [],
+                        property;
+                    for (property in object) object.hasOwnProperty(property) && keys.push(property);
+                    return keys
+                },
+                Boot = {
+                    loading: 0,
+                    loaded: 0,
+                    apply: _apply,
+                    env: _environment,
+                    config: _config,
+                    assetConfig: {},
+                    scripts: {},
+                    currentFile: null,
+                    suspendedQueue: [],
+                    currentRequest: null,
+                    syncMode: !1,
+                    useElements: !0,
+                    listeners: [],
+                    Request: Request,
+                    Entry: Entry,
+                    allowMultipleBrowsers: !1,
+                    browserNames: {
+                        ie: 'IE',
+                        firefox: 'Firefox',
+                        safari: 'Safari',
+                        chrome: 'Chrome',
+                        opera: 'Opera',
+                        dolfin: 'Dolfin',
+                        edge: 'Edge',
+                        webosbrowser: 'webOSBrowser',
+                        chromeMobile: 'ChromeMobile',
+                        chromeiOS: 'ChromeiOS',
+                        silk: 'Silk',
+                        other: 'Other'
+                    },
+                    osNames: {
+                        ios: 'iOS',
+                        android: 'Android',
+                        windowsPhone: 'WindowsPhone',
+                        webos: 'webOS',
+                        blackberry: 'BlackBerry',
+                        rimTablet: 'RIMTablet',
+                        mac: 'MacOS',
+                        win: 'Windows',
+                        tizen: 'Tizen',
+                        linux: 'Linux',
+                        bada: 'Bada',
+                        chromeOS: 'ChromeOS',
+                        other: 'Other'
+                    },
+                    browserPrefixes: {
+                        ie: 'MSIE ',
+                        edge: 'Edge/',
+                        firefox: 'Firefox/',
+                        chrome: 'Chrome/',
+                        safari: 'Version/',
+                        opera: 'OPR/',
+                        dolfin: 'Dolfin/',
+                        webosbrowser: 'wOSBrowser/',
+                        chromeMobile: 'CrMo/',
+                        chromeiOS: 'CriOS/',
+                        silk: 'Silk/'
+                    },
+                    browserPriority: 'edge opera dolfin webosbrowser silk chromeiOS chromeMobile ie firefox safari chrome'.split(' '),
+                    osPrefixes: {
+                        tizen: '(Tizen )',
+                        ios: 'i(?:Pad|Phone|Pod)(?:.*)CPU(?: iPhone)? OS ',
+                        android: '(Android |HTC_|Silk/)',
+                        windowsPhone: 'Windows Phone ',
+                        blackberry: '(?:BlackBerry|BB)(?:.*)Version/',
+                        rimTablet: 'RIM Tablet OS ',
+                        webos: '(?:webOS|hpwOS)/',
+                        bada: 'Bada/',
+                        chromeOS: 'CrOS '
+                    },
+                    fallbackOSPrefixes: {
+                        windows: 'win',
+                        mac: 'mac',
+                        linux: 'linux'
+                    },
+                    devicePrefixes: {
+                        iPhone: 'iPhone',
+                        iPod: 'iPod',
+                        iPad: 'iPad'
+                    },
+                    maxIEVersion: 12,
+                    detectPlatformTags: function() {
+                        var me = this,
+                            ua = navigator.userAgent,
+                            isMobile = /Mobile(\/|\s)/.test(ua),
+                            element =
+                            document.createElement('div'),
+                            browsers = function() {
+                                var browsers = {},
+                                    index, matched;
+                                var prefix = me.browserPriority.length;
+                                for (index = 0; index < prefix; index++) {
+                                    var maxIEVersion = me.browserPriority[index];
+                                    if (matched) var value = 0;
+                                    else value = me.browserPrefixes[maxIEVersion], (value = (value = ua.match(new RegExp('(' + value + ')([\\w\\._]+)'))) && 1 < value.length ? parseInt(value[2]) : 0) && (matched = !0);
+                                    browsers[maxIEVersion] = value
+                                }
+                                browsers.ie && (index = document.documentMode, 8 <= index && (browsers.ie = index));
+                                value = browsers.ie || !1;
+                                maxIEVersion =
+                                    Math.max(value, me.maxIEVersion);
+                                for (index = 8; index <= maxIEVersion; ++index) prefix = 'ie' + index, browsers[prefix + 'm'] = value ? value <= index : 0, browsers[prefix] = value ? value === index : 0, browsers[prefix + 'p'] = value ? value >= index : 0;
+                                return browsers
+                            }(),
+                            systems = function() {
+                                var systems = {},
+                                    index, activeCount;
+                                var keys = _getKeys(me.osPrefixes);
+                                var len = keys.length;
+                                for (activeCount = index = 0; index < len; index++) {
+                                    var key = keys[index];
+                                    var value = me.osPrefixes[key];
+                                    var matched = (value = ua.match(new RegExp('(' + value + ')([^\\s;]+)'))) ? value[1] :
+                                        null;
+                                    (value = !matched || 'HTC_' !== matched && 'Silk/' !== matched ? value && 1 < value.length ? parseFloat(value[value.length - 1]) : 0 : 2.3) && activeCount++;
+                                    systems[key] = value
+                                }
+                                keys = _getKeys(me.fallbackOSPrefixes);
+                                len = keys.length;
+                                for (index = 0; index < len; index++) key = keys[index], 0 === activeCount ? (value = me.fallbackOSPrefixes[key], value = ua.toLowerCase().match(new RegExp(value)), systems[key] = value ? !0 : 0) : systems[key] = 0;
+                                return systems
+                            }(),
+                            devices = function() {
+                                var devices = {},
+                                    index;
+                                var keys = _getKeys(me.devicePrefixes);
+                                var len = keys.length;
+                                for (index = 0; index < len; index++) {
+                                    var key = keys[index];
+                                    var value = me.devicePrefixes[key];
+                                    value = ua.match(new RegExp(value));
+                                    devices[key] = value ? !0 : 0
+                                }
+                                return devices
+                            }(),
+                            platformParams = Boot.loadPlatformsParam();
+                        _merge(_tags, browsers, systems, devices, platformParams, !0);
+                        _tags.phone = !!(_tags.iphone || _tags.ipod || !_tags.silk && _tags.android && (3 > _tags.android || isMobile) || _tags.blackberry && isMobile || _tags.windowsphone);
+                        _tags.tablet = !(_tags.phone || !(_tags.ipad || _tags.android || _tags.silk || _tags.rimtablet || _tags.ie10 &&
+                            /; Touch/.test(ua)));
+                        _tags.touch = function(name, tag) {
+                            name = 'on' + name.toLowerCase();
+                            tag = name in element;
+                            !tag && element.setAttribute && element.removeAttribute && (element.setAttribute(name, ''), tag = 'function' === typeof element[name], 'undefined' !== typeof element[name] && (element[name] = void 0), element.removeAttribute(name));
+                            return tag
+                        }('touchend') || navigator.maxTouchPoints || navigator.msMaxTouchPoints;
+                        _tags.desktop = !_tags.phone && !_tags.tablet;
+                        _tags.cordova = _tags.phonegap = !!(window.PhoneGap || window.Cordova || window.cordova);
+                        _tags.webview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)(?!.*FBAN)/i.test(ua);
+                        _tags.androidstock = 4.3 >= _tags.android && (_tags.safari || _tags.silk);
+                        _merge(_tags, platformParams, !0)
+                    },
+                    loadPlatformsParam: function() {
+                        var paramsArray = window.location.search.substr(1).split('\x26'),
+                            params = {},
+                            i, platforms = {};
+                        for (i = 0; i < paramsArray.length; i++) {
+                            var tmpArray = paramsArray[i].split('\x3d');
+                            params[tmpArray[0]] = tmpArray[1]
+                        }
+                        if (params.platformTags)
+                            for (tmpArray = params.platformTags.split(','), paramsArray = tmpArray.length, i =
+                                0; i < paramsArray; i++) {
+                                params = tmpArray[i].split(':');
+                                var name = params[0];
+                                var enabled = !0;
+                                1 < params.length && (enabled = params[1], 'false' === enabled || '0' === enabled) && (enabled = !1);
+                                platforms[name] = enabled
+                            }
+                        return platforms
+                    },
+                    filterPlatform: function(platform, excludes) {
+                        platform = _emptyArray.concat(platform || _emptyArray);
+                        excludes = _emptyArray.concat(excludes || _emptyArray);
+                        var plen = platform.length,
+                            elen = excludes.length,
+                            include = !plen && elen,
+                            i;
+                        for (i = 0; i < plen && !include; i++) include = platform[i], include = !!_tags[include];
+                        for (i =
+                            0; i < elen && include; i++) include = excludes[i], include = !_tags[include];
+                        return include
+                    },
+                    init: function() {
+                        var scriptEls = doc.getElementsByTagName('script'),
+                            script = scriptEls[0],
+                            len = scriptEls.length,
+                            re = /\/ext(\-[a-z\-]+)?\.js$/,
+                            src, baseUrl, key, n;
+                        Boot.hasReadyState = 'readyState' in script;
+                        Boot.hasAsync = 'async' in script;
+                        Boot.hasDefer = 'defer' in script;
+                        Boot.hasOnLoad = 'onload' in script;
+                        Boot.isIE8 = Boot.hasReadyState && !Boot.hasAsync && Boot.hasDefer && !Boot.hasOnLoad;
+                        Boot.isIE9 = Boot.hasReadyState && !Boot.hasAsync && Boot.hasDefer &&
+                            Boot.hasOnLoad;
+                        Boot.isIE10p = Boot.hasReadyState && Boot.hasAsync && Boot.hasDefer && Boot.hasOnLoad;
+                        Boot.isIE8 ? (Boot.isIE10 = !1, Boot.isIE10m = !0) : (Boot.isIE10 = -1 !== navigator.appVersion.indexOf('MSIE 10'), Boot.isIE10m = Boot.isIE10 || Boot.isIE9 || Boot.isIE8);
+                        Boot.isIE11 = Boot.isIE10p && !Boot.isIE10;
+                        for (n = 0; n < len; n++)
+                            if (src = (script = scriptEls[n]).src) {
+                                var state = script.readyState || null;
+                                !baseUrl && re.test(src) && (baseUrl = src);
+                                Boot.scripts[key = Boot.canonicalUrl(src)] || new Entry({
+                                    key: key,
+                                    url: src,
+                                    done: null === state || 'loaded' ===
+                                        state || 'complete' === state,
+                                    el: script,
+                                    prop: 'src'
+                                })
+                            }
+                        baseUrl || (script = scriptEls[scriptEls.length - 1], baseUrl = script.src);
+                        Boot.baseUrl = baseUrl.substring(0, baseUrl.lastIndexOf('/') + 1);
+                        Boot.origin = window.location.origin || window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+                        Boot.detectPlatformTags();
+                        Ext.filterPlatform = Boot.filterPlatform
+                    },
+                    canonicalUrl: function(url) {
+                        resolverEl.href = url;
+                        url = resolverEl.href;
+                        var dc = _config.disableCachingParam;
+                        dc = dc ? url.indexOf(dc +
+                            '\x3d') : -1;
+                        var c;
+                        if (0 < dc && ('?' === (c = url.charAt(dc - 1)) || '\x26' === c)) {
+                            var end = url.indexOf('\x26', dc);
+                            (end = 0 > end ? '' : url.substring(end)) && '?' === c && (++dc, end = end.substring(1));
+                            url = url.substring(0, dc - 1) + end
+                        }
+                        return url
+                    },
+                    getConfig: function(name) {
+                        return name ? Boot.config[name] : Boot.config
+                    },
+                    setConfig: function(name, value) {
+                        if ('string' === typeof name) Boot.config[name] = value;
+                        else
+                            for (var s in name) Boot.setConfig(s, name[s]);
+                        return Boot
+                    },
+                    getHead: function() {
+                        return Boot.docHead || (Boot.docHead = doc.head || doc.getElementsByTagName('head')[0])
+                    },
+                    create: function(url, key, cfg) {
+                        cfg = cfg || {};
+                        cfg.url = url;
+                        cfg.key = key;
+                        return Boot.scripts[key] = new Entry(cfg)
+                    },
+                    getEntry: function(url, cfg, canonicalPath) {
+                        var key = canonicalPath ? url : Boot.canonicalUrl(url);
+                        var entry = Boot.scripts[key];
+                        entry || (entry = Boot.create(url, key, cfg), canonicalPath && (entry.canonicalPath = !0));
+                        return entry
+                    },
+                    registerContent: function(url, type, content) {
+                        return Boot.getEntry(url, {
+                            content: content,
+                            loaded: !0,
+                            css: 'css' === type
+                        })
+                    },
+                    processRequest: function(request, sync) {
+                        request.loadEntries(sync)
+                    },
+                    load: function(request) {
+                        request =
+                            new Request(request);
+                        if (request.sync || Boot.syncMode) return Boot.loadSync(request);
+                        Boot.currentRequest ? (request.getEntries(), Boot.suspendedQueue.push(request)) : (Boot.currentRequest = request, Boot.processRequest(request, !1));
+                        return Boot
+                    },
+                    loadSync: function(request) {
+                        request = new Request(request);
+                        Boot.syncMode++;
+                        Boot.processRequest(request, !0);
+                        Boot.syncMode--;
+                        return Boot
+                    },
+                    loadBasePrefix: function(request) {
+                        request = new Request(request);
+                        request.prependBaseUrl = !0;
+                        return Boot.load(request)
+                    },
+                    loadSyncBasePrefix: function(request) {
+                        request =
+                            new Request(request);
+                        request.prependBaseUrl = !0;
+                        return Boot.loadSync(request)
+                    },
+                    requestComplete: function(request) {
+                        if (Boot.currentRequest === request)
+                            for (Boot.currentRequest = null; 0 < Boot.suspendedQueue.length;)
+                                if (request = Boot.suspendedQueue.shift(), !request.done) {
+                                    Boot.load(request);
+                                    break
+                                }
+                        Boot.currentRequest || 0 != Boot.suspendedQueue.length || Boot.fireListeners()
+                    },
+                    isLoading: function() {
+                        return !Boot.currentRequest && 0 == Boot.suspendedQueue.length
+                    },
+                    fireListeners: function() {
+                        for (var listener; Boot.isLoading() && (listener =
+                                Boot.listeners.shift());) listener()
+                    },
+                    onBootReady: function(listener) {
+                        Boot.isLoading() ? Boot.listeners.push(listener) : listener()
+                    },
+                    getPathsFromIndexes: function(indexMap, loadOrder) {
+                        if (!('length' in indexMap)) {
+                            var indexArray = [],
+                                index;
+                            for (index in indexMap) isNaN(+index) || (indexArray[+index] = indexMap[index]);
+                            indexMap = indexArray
+                        }
+                        return Request.prototype.getPathsFromIndexes(indexMap, loadOrder)
+                    },
+                    createLoadOrderMap: function(loadOrder) {
+                        return Request.prototype.createLoadOrderMap(loadOrder)
+                    },
+                    fetch: function(url,
+                        complete, scope, async) {
+                        async = void 0 === async ? !!complete : async;
+                        var xhr = new XMLHttpRequest,
+                            result, status, content, exception = !1,
+                            readyStateChange = function() {
+                                xhr && 4 == xhr.readyState && (status = 1223 === xhr.status ? 204 : 0 !== xhr.status || 'file:' !== (self.location || {}).protocol && 'ionp:' !== (self.location || {}).protocol ? xhr.status : 200, content = xhr.responseText, result = {
+                                    content: content,
+                                    status: status,
+                                    exception: exception
+                                }, complete && complete.call(scope, result), xhr.onreadystatechange = emptyFn, xhr = null)
+                            };
+                        async && (xhr.onreadystatechange =
+                            readyStateChange);
+                        try {
+                            xhr.open('GET', url, async), xhr.send(null)
+                        } catch (err) {
+                            return exception = err, readyStateChange(), result
+                        }
+                        async || readyStateChange();
+                        return result
+                    },
+                    notifyAll: function(entry) {
+                        entry.notifyRequests()
+                    }
+                };
+            Request.prototype = {
+                $isRequest: !0,
+                createLoadOrderMap: function(loadOrder) {
+                    var len = loadOrder.length,
+                        loadOrderMap = {},
+                        i;
+                    for (i = 0; i < len; i++) {
+                        var element = loadOrder[i];
+                        loadOrderMap[element.path] = element
+                    }
+                    return loadOrderMap
+                },
+                getLoadIndexes: function(item, indexMap, loadOrder, includeUses, skipLoaded) {
+                    var resolved = [],
+                        queue = [item];
+                    item = item.idx;
+                    var len;
+                    if (indexMap[item]) return resolved;
+                    for (indexMap[item] = resolved[item] = !0; item = queue.shift();) {
+                        var entry = item.canonicalPath ? Boot.getEntry(item.path, null, !0) : Boot.getEntry(this.prepareUrl(item.path));
+                        if (!skipLoaded || !entry.done) {
+                            item = includeUses && item.uses && item.uses.length ? item.requires.concat(item.uses) : item.requires;
+                            var i = 0;
+                            for (len = item.length; i < len; i++) entry = item[i], indexMap[entry] || (indexMap[entry] = resolved[entry] = !0, queue.push(loadOrder[entry]))
+                        }
+                    }
+                    return resolved
+                },
+                getPathsFromIndexes: function(indexes, loadOrder) {
+                    var paths = [],
+                        len;
+                    var index = 0;
+                    for (len = indexes.length; index < len; index++) indexes[index] && paths.push(loadOrder[index].path);
+                    return paths
+                },
+                expandUrl: function(url, loadOrder, loadOrderMap, indexMap, includeUses, skipLoaded) {
+                    return loadOrder && (loadOrderMap = loadOrderMap[url]) && (indexMap = this.getLoadIndexes(loadOrderMap, indexMap, loadOrder, includeUses, skipLoaded), indexMap.length) ? this.getPathsFromIndexes(indexMap, loadOrder) : [url]
+                },
+                expandUrls: function(urls, includeUses) {
+                    var loadOrder =
+                        this.loadOrder,
+                        expanded = [],
+                        expandMap = {},
+                        indexMap = [],
+                        len, tlen;
+                    'string' === typeof urls && (urls = [urls]);
+                    if (loadOrder) {
+                        var loadOrderMap = this.loadOrderMap;
+                        loadOrderMap || (loadOrderMap = this.loadOrderMap = this.createLoadOrderMap(loadOrder))
+                    }
+                    var i = 0;
+                    for (len = urls.length; i < len; i++) {
+                        var tmpExpanded = this.expandUrl(urls[i], loadOrder, loadOrderMap, indexMap, includeUses, !1);
+                        var t = 0;
+                        for (tlen = tmpExpanded.length; t < tlen; t++) {
+                            var tUrl = tmpExpanded[t];
+                            expandMap[tUrl] || (expandMap[tUrl] = !0, expanded.push(tUrl))
+                        }
+                    }
+                    0 === expanded.length &&
+                        (expanded = urls);
+                    return expanded
+                },
+                expandLoadOrder: function() {
+                    var urls = this.urls;
+                    if (this.expanded) var expanded = urls;
+                    else expanded = this.expandUrls(urls, !0), this.expanded = !0;
+                    this.urls = expanded;
+                    urls.length != expanded.length && (this.sequential = !0);
+                    return this
+                },
+                getUrls: function() {
+                    this.expandLoadOrder();
+                    return this.urls
+                },
+                prepareUrl: function(url) {
+                    return this.prependBaseUrl ? Boot.baseUrl + url : url
+                },
+                getEntries: function() {
+                    var entries = this.entries,
+                        item, i;
+                    if (!entries) {
+                        entries = [];
+                        var urls = this.getUrls();
+                        if (this.loadOrder) var loadOrderMap =
+                            this.loadOrderMap;
+                        for (i = 0; i < urls.length; i++) {
+                            var entry = this.prepareUrl(urls[i]);
+                            loadOrderMap && (item = loadOrderMap[entry]);
+                            entry = Boot.getEntry(entry, {
+                                buster: this.buster,
+                                charset: this.charset
+                            }, item && item.canonicalPath);
+                            entry.requests.push(this);
+                            entries.push(entry)
+                        }
+                        this.entries = entries
+                    }
+                    return entries
+                },
+                loadEntries: function(sync) {
+                    var me = this,
+                        entries = me.getEntries(),
+                        len = entries.length,
+                        start = me.loadStart || 0,
+                        i;
+                    void 0 !== sync && (me.sync = sync);
+                    me.loaded = me.loaded || 0;
+                    me.loading = me.loading || len;
+                    for (i = start; i < len; i++) {
+                        var entry =
+                            entries[i];
+                        start = entry.loaded ? !0 : entries[i].load(me.sync);
+                        if (!start) {
+                            me.loadStart = i;
+                            entry.onDone(function() {
+                                me.loadEntries(sync)
+                            });
+                            break
+                        }
+                    }
+                    me.processLoadedEntries()
+                },
+                processLoadedEntries: function() {
+                    var entries = this.getEntries(),
+                        len = entries.length,
+                        start = this.startIndex || 0;
+                    if (!this.done) {
+                        for (; start < len; start++) {
+                            var entry = entries[start];
+                            if (!entry.loaded) {
+                                this.startIndex = start;
+                                return
+                            }
+                            entry.evaluated || entry.evaluate();
+                            entry.error && (this.error = !0)
+                        }
+                        this.notify()
+                    }
+                },
+                notify: function() {
+                    var me = this;
+                    if (!me.done) {
+                        var error =
+                            me.error,
+                            fn = me[error ? 'failure' : 'success'];
+                        error = 'delay' in me ? me.delay : error ? 1 : Boot.config.chainDelay;
+                        var scope = me.scope || me;
+                        me.done = !0;
+                        fn && (0 === error || 0 < error ? setTimeout(function() {
+                            fn.call(scope, me)
+                        }, error) : fn.call(scope, me));
+                        me.fireListeners();
+                        Boot.requestComplete(me)
+                    }
+                },
+                onDone: function(listener) {
+                    var listeners = this.listeners || (this.listeners = []);
+                    this.done ? listener(this) : listeners.push(listener)
+                },
+                fireListeners: function() {
+                    var listeners = this.listeners,
+                        listener;
+                    if (listeners)
+                        for (; listener = listeners.shift();) listener(this)
+                }
+            };
+            Entry.prototype = {
+                $isEntry: !0,
+                done: !1,
+                evaluated: !1,
+                loaded: !1,
+                isCrossDomain: function() {
+                    void 0 === this.crossDomain && (this.crossDomain = 0 !== this.getLoadUrl().indexOf(Boot.origin));
+                    return this.crossDomain
+                },
+                isCss: function() {
+                    if (void 0 === this.css)
+                        if (this.url) {
+                            var assetConfig = Boot.assetConfig[this.url];
+                            this.css = assetConfig ? 'css' === assetConfig.type : cssRe.test(this.url)
+                        } else this.css = !1;
+                    return this.css
+                },
+                getElement: function(tag) {
+                    var el = this.el;
+                    el || (this.isCss() ? (tag = tag || 'link', el = doc.createElement(tag), 'link' ==
+                        tag ? (el.rel = 'stylesheet', this.prop = 'href') : this.prop = 'textContent', el.type = 'text/css') : (el = doc.createElement(tag || 'script'), el.type = 'text/javascript', this.prop = 'src', this.charset && (el.charset = this.charset), Boot.hasAsync && (el.async = !1)), this.el = el);
+                    return el
+                },
+                getLoadUrl: function() {
+                    var url = this.canonicalPath ? this.url : Boot.canonicalUrl(this.url);
+                    this.loadUrl || (this.loadUrl = this.buster ? url + (-1 === url.indexOf('?') ? '?' : '\x26') + this.buster : url);
+                    return this.loadUrl
+                },
+                fetch: function(req) {
+                    var url = this.getLoadUrl();
+                    Boot.fetch(url, req.complete, this, !!req.async)
+                },
+                onContentLoaded: function(response) {
+                    var status = response.status,
+                        content = response.content;
+                    response = response.exception;
+                    this.getLoadUrl();
+                    this.loaded = !0;
+                    !response && 0 !== status || _environment.phantom ? 200 <= status && 300 > status || 304 === status || _environment.phantom || 0 === status && 0 < content.length ? this.content = content : this.evaluated = this.error = !0 : this.evaluated = this.error = !0
+                },
+                createLoadElement: function(callback) {
+                    var me = this,
+                        el = me.getElement();
+                    me.preserve = !0;
+                    el.onerror =
+                        function() {
+                            me.error = !0;
+                            callback && (callback(), callback = null)
+                        };
+                    Boot.isIE10m ? el.onreadystatechange = function() {
+                        'loaded' !== this.readyState && 'complete' !== this.readyState || !callback || (callback(), callback = this.onreadystatechange = this.onerror = null)
+                    } : el.onload = function() {
+                        callback();
+                        callback = this.onload = this.onerror = null
+                    };
+                    el[me.prop] = me.getLoadUrl()
+                },
+                onLoadElementReady: function() {
+                    Boot.getHead().appendChild(this.getElement());
+                    this.evaluated = !0
+                },
+                inject: function(content, asset) {
+                    asset = Boot.getHead();
+                    var url = this.url,
+                        key = this.key;
+                    if (this.isCss()) {
+                        this.preserve = !0;
+                        var basePath = key.substring(0, key.lastIndexOf('/') + 1);
+                        var base = doc.createElement('base');
+                        base.href = basePath;
+                        asset.firstChild ? asset.insertBefore(base, asset.firstChild) : asset.appendChild(base);
+                        base.href = base.href;
+                        url && (content += '\n/*# sourceURL\x3d' + key + ' */');
+                        url = this.getElement('style');
+                        key = 'styleSheet' in url;
+                        asset.appendChild(base);
+                        key ? (asset.appendChild(url), url.styleSheet.cssText = content) : (url.textContent = content, asset.appendChild(url));
+                        asset.removeChild(base)
+                    } else url &&
+                        (content += '\n//# sourceURL\x3d' + key), Ext.globalEval(content);
+                    return this
+                },
+                loadCrossDomain: function() {
+                    var me = this;
+                    me.createLoadElement(function() {
+                        me.el.onerror = me.el.onload = emptyFn;
+                        me.el = null;
+                        me.loaded = me.evaluated = me.done = !0;
+                        me.notifyRequests()
+                    });
+                    me.evaluateLoadElement();
+                    return !1
+                },
+                loadElement: function() {
+                    var me = this;
+                    me.createLoadElement(function() {
+                        me.el.onerror = me.el.onload = emptyFn;
+                        me.el = null;
+                        me.loaded = me.evaluated = me.done = !0;
+                        me.notifyRequests()
+                    });
+                    me.evaluateLoadElement();
+                    return !0
+                },
+                loadSync: function() {
+                    var me =
+                        this;
+                    me.fetch({
+                        async: !1,
+                        complete: function(response) {
+                            me.onContentLoaded(response)
+                        }
+                    });
+                    me.evaluate();
+                    me.notifyRequests()
+                },
+                load: function(sync) {
+                    var me = this;
+                    if (!me.loaded) {
+                        if (me.loading) return !1;
+                        me.loading = !0;
+                        if (sync) me.loadSync();
+                        else {
+                            if (Boot.isIE10 || me.isCrossDomain()) return me.loadCrossDomain();
+                            if (!me.isCss() && Boot.hasReadyState) me.createLoadElement(function() {
+                                me.loaded = !0;
+                                me.notifyRequests()
+                            });
+                            else if (!Boot.useElements || me.isCss() && _environment.phantom) me.fetch({
+                                async: !sync,
+                                complete: function(response) {
+                                    me.onContentLoaded(response);
+                                    me.notifyRequests()
+                                }
+                            });
+                            else return me.loadElement()
+                        }
+                    }
+                    return !0
+                },
+                evaluateContent: function() {
+                    this.inject(this.content);
+                    this.content = null
+                },
+                evaluateLoadElement: function() {
+                    Boot.getHead().appendChild(this.getElement())
+                },
+                evaluate: function() {
+                    this.evaluated || this.evaluating || (this.evaluating = !0, void 0 !== this.content ? this.evaluateContent() : this.error || this.evaluateLoadElement(), this.evaluated = this.done = !0, this.cleanup())
+                },
+                cleanup: function() {
+                    var el = this.el,
+                        prop;
+                    if (el) {
+                        if (!this.preserve)
+                            for (prop in this.el = null,
+                                el.parentNode.removeChild(el), el) try {
+                                prop !== this.prop && (el[prop] = null), delete el[prop]
+                            } catch (cleanEx) {}
+                        el.onload = el.onerror = el.onreadystatechange = emptyFn
+                    }
+                },
+                notifyRequests: function() {
+                    var requests = this.requests,
+                        len = requests.length,
+                        i;
+                    for (i = 0; i < len; i++) {
+                        var request = requests[i];
+                        request.processLoadedEntries()
+                    }
+                    this.done && this.fireListeners()
+                },
+                onDone: function(listener) {
+                    var listeners = this.listeners || (this.listeners = []);
+                    this.done ? listener(this) : listeners.push(listener)
+                },
+                fireListeners: function() {
+                    var listeners =
+                        this.listeners,
+                        listener;
+                    if (listeners && 0 < listeners.length)
+                        for (; listener = listeners.shift();) listener(this)
+                }
+            };
+            Ext.disableCacheBuster = function(disable, path) {
+                var date = new Date;
+                date.setTime(date.getTime() + 864E5 * (disable ? 3650 : -1));
+                date = date.toGMTString();
+                doc.cookie = 'ext-cache\x3d1; expires\x3d' + date + '; path\x3d' + (path || '/')
+            };
+            Boot.init();
+            return Boot
+        }(function() {});
+        Ext.globalEval = Ext.globalEval || (this.execScript ? function(code) {
+            execScript(code)
+        } : function($$code) {
+            eval.call(window, $$code)
+        });
+        Function.prototype.bind || function() {
+            var slice = Array.prototype.slice,
+                bind = function(me) {
+                    var args = slice.call(arguments, 1),
+                        method = this;
+                    if (args.length) return function() {
+                        var t = arguments;
+                        return method.apply(me, t.length ? args.concat(slice.call(t)) : args)
+                    };
+                    args = null;
+                    return function() {
+                        return method.apply(me, arguments)
+                    }
+                };
+            Function.prototype.bind = bind;
+            bind.$extjs = !0
+        }();
+        Ext.setResourcePath = function(poolName, path) {
+            var manifest = Ext.manifest || (Ext.manifest = {}),
+                paths = manifest.resources || (manifest.resources = {});
+            manifest && ('string' !== typeof poolName ? Ext.apply(paths, poolName) : paths[poolName] = path, manifest.resources = paths)
+        };
+        Ext.getResourcePath = function(path, poolName, packageName) {
+            'string' !== typeof path && (poolName = path.pool, packageName = path.packageName, path = path.path);
+            var manifest = Ext.manifest;
+            manifest = manifest && manifest.resources;
+            poolName = manifest[poolName];
+            var output = [];
+            null == poolName && (poolName = manifest.path, null == poolName && (poolName = 'resources'));
+            poolName && output.push(poolName);
+            packageName && output.push(packageName);
+            output.push(path);
+            return output.join('/')
+        };
+        Ext = Ext || window.Ext || {};
+        Ext.Microloader = Ext.Microloader || function() {
+            var Boot = Ext.Boot,
+                _warn = function(message) {
+                    console.log('[WARN] ' + message)
+                },
+                _privatePrefix = '_ext:' + location.pathname,
+                getStorageKey = function(url, profileId) {
+                    return _privatePrefix + url + '-' + (profileId ? profileId + '-' : '') + Microloader.appId
+                },
+                postProcessor;
+            try {
+                var _storage = window.localStorage
+            } catch (ex) {}
+            var _cache, LocalStorage = {
+                    clearAllPrivate: function(manifest) {
+                        if (_storage) {
+                            _storage.removeItem(manifest.key);
+                            var removeKeys = [],
+                                suffix = manifest.profile + '-' + Microloader.appId,
+                                ln = _storage.length;
+                            for (manifest = 0; manifest < ln; manifest++) {
+                                var key = _storage.key(manifest);
+                                0 === key.indexOf(_privatePrefix) && -1 !== key.indexOf(suffix) && removeKeys.push(key)
+                            }
+                            for (manifest in removeKeys) _storage.removeItem(removeKeys[manifest])
+                        }
+                    },
+                    retrieveAsset: function(key) {
+                        try {
+                            return _storage.getItem(key)
+                        } catch (e) {
+                            return null
+                        }
+                    },
+                    setAsset: function(key, content) {
+                        try {
+                            null === content || '' == content ? _storage.removeItem(key) : _storage.setItem(key, content)
+                        } catch (e) {
+                            _storage && e.code == e.QUOTA_EXCEEDED_ERR && _warn('LocalStorage Quota exceeded, cannot store ' +
+                                key + ' locally')
+                        }
+                    }
+                },
+                Asset = function(cfg) {
+                    this.assetConfig = 'string' === typeof cfg.assetConfig ? {
+                        path: cfg.assetConfig
+                    } : cfg.assetConfig;
+                    this.type = cfg.type;
+                    this.key = getStorageKey(this.assetConfig.path, cfg.manifest.profile);
+                    cfg.loadFromCache && this.loadFromCache()
+                };
+            Asset.prototype = {
+                shouldCache: function() {
+                    return _storage && this.assetConfig.update && this.assetConfig.hash && !this.assetConfig.remote
+                },
+                is: function(asset) {
+                    return !!asset && this.assetConfig && asset.assetConfig && this.assetConfig.hash === asset.assetConfig.hash
+                },
+                cache: function(content) {
+                    this.shouldCache() && LocalStorage.setAsset(this.key, content || this.content)
+                },
+                uncache: function() {
+                    LocalStorage.setAsset(this.key, null)
+                },
+                updateContent: function(content) {
+                    this.content = content
+                },
+                getSize: function() {
+                    return this.content ? this.content.length : 0
+                },
+                loadFromCache: function() {
+                    this.shouldCache() && (this.content = LocalStorage.retrieveAsset(this.key))
+                }
+            };
+            var Manifest = function(cfg) {
+                this.content = 'string' === typeof cfg.content ? JSON.parse(cfg.content) : cfg.content;
+                this.assetMap = {};
+                this.url =
+                    cfg.url;
+                this.fromCache = !!cfg.cached;
+                this.assetCache = !1 !== cfg.assetCache;
+                this.key = getStorageKey(this.url);
+                this.profile = this.content.profile;
+                this.hash = this.content.hash;
+                this.loadOrder = this.content.loadOrder;
+                this.deltas = this.content.cache ? this.content.cache.deltas : null;
+                this.cacheEnabled = this.content.cache ? this.content.cache.enable : !1;
+                this.loadOrderMap = this.loadOrder ? Boot.createLoadOrderMap(this.loadOrder) : null;
+                cfg = this.content.tags;
+                var platformTags = Ext.platformTags;
+                if (cfg) {
+                    if (cfg instanceof Array)
+                        for (var i =
+                                0; i < cfg.length; i++) platformTags[cfg[i]] = !0;
+                    else Boot.apply(platformTags, cfg);
+                    Boot.apply(platformTags, Boot.loadPlatformsParam())
+                }
+                this.js = this.processAssets(this.content.js, 'js');
+                this.css = this.processAssets(this.content.css, 'css')
+            };
+            Manifest.prototype = {
+                processAsset: function(assetConfig, type) {
+                    type = new Asset({
+                        manifest: this,
+                        assetConfig: assetConfig,
+                        type: type,
+                        loadFromCache: this.assetCache
+                    });
+                    return this.assetMap[assetConfig.path] = type
+                },
+                processAssets: function(assets, type) {
+                    var results = [],
+                        ln = assets.length,
+                        i;
+                    for (i = 0; i < ln; i++) {
+                        var assetConfig = assets[i];
+                        results.push(this.processAsset(assetConfig, type))
+                    }
+                    return results
+                },
+                useAppCache: function() {
+                    return this.content.appCacheEnabled
+                },
+                getAssets: function() {
+                    return this.css.concat(this.js)
+                },
+                getAsset: function(path) {
+                    return this.assetMap[path]
+                },
+                shouldCache: function() {
+                    return this.hash && this.cacheEnabled
+                },
+                cache: function(content) {
+                    this.shouldCache() && LocalStorage.setAsset(this.key, JSON.stringify(content || this.content))
+                },
+                is: function(manifest) {
+                    return this.hash === manifest.hash
+                },
+                uncache: function() {
+                    LocalStorage.setAsset(this.key, null)
+                },
+                exportContent: function() {
+                    return Boot.apply({
+                        loadOrderMap: this.loadOrderMap
+                    }, this.content)
+                }
+            };
+            var _listeners = [],
+                _loaded = !1,
+                Microloader = {
+                    init: function() {
+                        Ext.microloaded = !0;
+                        var microloaderElement = document.getElementById('microloader');
+                        Microloader.appId = microloaderElement ? microloaderElement.getAttribute('data-app') : '';
+                        Ext.beforeLoad && (postProcessor = Ext.beforeLoad(Ext.platformTags));
+                        var readyHandler = Ext._beforereadyhandler;
+                        Ext._beforereadyhandler =
+                            function() {
+                                Ext.Boot !== Boot && (Ext.apply(Ext.Boot, Boot), Ext.Boot = Boot);
+                                readyHandler && readyHandler()
+                            }
+                    },
+                    applyCacheBuster: function(url) {
+                        var tstamp = (new Date).getTime(),
+                            sep = -1 === url.indexOf('?') ? '?' : '\x26',
+                            progressive = Ext.manifest.progressive;
+                        progressive && progressive.serviceWorker || (url = url + sep + '_dc\x3d' + tstamp);
+                        return url
+                    },
+                    run: function() {
+                        Microloader.init();
+                        var manifest = Ext.manifest;
+                        if ('string' === typeof manifest) {
+                            manifest = manifest.indexOf('.json') === manifest.length - 5 ? manifest : manifest + '.json';
+                            var key = getStorageKey(manifest);
+                            (key = LocalStorage.retrieveAsset(key)) ? (manifest = new Manifest({
+                                url: manifest,
+                                content: key,
+                                cached: !0
+                            }), postProcessor && postProcessor(manifest), Microloader.load(manifest)) : 0 === location.href.indexOf('file:/') ? (Manifest.url = Microloader.applyCacheBuster(manifest + 'p'), Boot.load(Manifest.url)) : (Manifest.url = manifest, Boot.fetch(Microloader.applyCacheBuster(manifest), function(result) {
+                                Microloader.setManifest(result.content)
+                            }))
+                        } else manifest = new Manifest({
+                            content: manifest
+                        }), Microloader.load(manifest)
+                    },
+                    setManifest: function(cfg) {
+                        cfg =
+                            new Manifest({
+                                url: Manifest.url,
+                                content: cfg
+                            });
+                        cfg.cache();
+                        postProcessor && postProcessor(cfg);
+                        Microloader.load(cfg)
+                    },
+                    load: function(manifest) {
+                        Microloader.urls = [];
+                        Microloader.manifest = manifest;
+                        Ext.manifest = Microloader.manifest.exportContent();
+                        var progressive = Ext.manifest.progressive;
+                        progressive && progressive.serviceWorker && 'serviceWorker' in navigator && (navigator.serviceWorker.register('./' + progressive.serviceWorker), Ext.Boot.config.disableCaching = !1);
+                        progressive = manifest.getAssets();
+                        var cachedAssets = [],
+                            i, include;
+                        var len = progressive.length;
+                        for (i = 0; i < len; i++) {
+                            var asset$jscomp$0 = progressive[i];
+                            if (include = Microloader.filterAsset(asset$jscomp$0)) manifest.shouldCache() && asset$jscomp$0.shouldCache() && (asset$jscomp$0.content ? (include = Boot.registerContent(asset$jscomp$0.assetConfig.path, asset$jscomp$0.type, asset$jscomp$0.content), include.evaluated && _warn('Asset: ' + asset$jscomp$0.assetConfig.path + ' was evaluated prior to local storage being consulted.')) : cachedAssets.push(asset$jscomp$0)), Microloader.urls.push(asset$jscomp$0.assetConfig.path),
+                                Boot.assetConfig[asset$jscomp$0.assetConfig.path] = Boot.apply({
+                                    type: asset$jscomp$0.type
+                                }, asset$jscomp$0.assetConfig)
+                        }
+                        if (0 < cachedAssets.length)
+                            for (Microloader.remainingCachedAssets = cachedAssets.length; 0 < cachedAssets.length;) asset$jscomp$0 = cachedAssets.pop(), Boot.fetch(asset$jscomp$0.assetConfig.path, function(asset) {
+                                return function(result) {
+                                    Microloader.onCachedAssetLoaded(asset, result)
+                                }
+                            }(asset$jscomp$0));
+                        else Microloader.onCachedAssetsReady()
+                    },
+                    onCachedAssetLoaded: function(asset, result) {
+                        result = Microloader.parseResult(result);
+                        Microloader.remainingCachedAssets--;
+                        if (result.error) _warn("There was an error pre-loading the asset '" + asset.assetConfig.path + "'. This asset will be uncached for future loading"), asset.uncache();
+                        else {
+                            var checksum = Microloader.checksum(result.content, asset.assetConfig.hash);
+                            checksum || (_warn("Cached Asset '" + asset.assetConfig.path + "' has failed checksum. This asset will be uncached for future loading"), asset.uncache());
+                            Boot.registerContent(asset.assetConfig.path, asset.type, result.content);
+                            asset.updateContent(result.content);
+                            asset.cache()
+                        }
+                        if (0 === Microloader.remainingCachedAssets) Microloader.onCachedAssetsReady()
+                    },
+                    onCachedAssetsReady: function() {
+                        Boot.load({
+                            url: Microloader.urls,
+                            loadOrder: Microloader.manifest.loadOrder,
+                            loadOrderMap: Microloader.manifest.loadOrderMap,
+                            sequential: !0,
+                            success: Microloader.onAllAssetsReady,
+                            failure: Microloader.onAllAssetsReady
+                        })
+                    },
+                    onAllAssetsReady: function() {
+                        _loaded = !0;
+                        Microloader.notify();
+                        !1 !== navigator.onLine ? Microloader.checkAllUpdates() : window.addEventListener && window.addEventListener('online',
+                            Microloader.checkAllUpdates, !1)
+                    },
+                    onMicroloaderReady: function(listener) {
+                        _loaded ? listener() : _listeners.push(listener)
+                    },
+                    notify: function() {
+                        for (var listener; listener = _listeners.shift();) listener()
+                    },
+                    patch: function(content, delta) {
+                        var output = [],
+                            ln;
+                        if (0 === delta.length) return content;
+                        var i = 0;
+                        for (ln = delta.length; i < ln; i++) {
+                            var chunk = delta[i];
+                            'number' === typeof chunk ? output.push(content.substring(chunk, chunk + delta[++i])) : output.push(chunk)
+                        }
+                        return output.join('')
+                    },
+                    checkAllUpdates: function() {
+                        window.removeEventListener &&
+                            window.removeEventListener('online', Microloader.checkAllUpdates, !1);
+                        Microloader.manifest.useAppCache() && Microloader.checkForAppCacheUpdate();
+                        Microloader.manifest.fromCache && Microloader.checkForUpdates()
+                    },
+                    checkForAppCacheUpdate: function() {
+                        if (!_cache) {
+                            try {
+                                _cache = !!window.applicationCache && window.applicationCache
+                            } catch (e) {
+                                return
+                            }
+                            if (!_cache) return
+                        }
+                        _cache.status === _cache.UPDATEREADY || _cache.status === _cache.OBSOLETE ? Microloader.appCacheState = 'updated' : _cache.status !== _cache.IDLE && _cache.status !== _cache.UNCACHED ?
+                            (Microloader.appCacheState = 'checking', _cache.addEventListener('error', Microloader.onAppCacheError), _cache.addEventListener('noupdate', Microloader.onAppCacheNotUpdated), _cache.addEventListener('cached', Microloader.onAppCacheNotUpdated), _cache.addEventListener('updateready', Microloader.onAppCacheReady), _cache.addEventListener('obsolete', Microloader.onAppCacheObsolete)) : Microloader.appCacheState = 'current'
+                    },
+                    checkForUpdates: function() {
+                        Boot.fetch(Microloader.applyCacheBuster(Microloader.manifest.url), Microloader.onUpdatedManifestLoaded)
+                    },
+                    onAppCacheError: function(e) {
+                        _warn(e.message);
+                        Microloader.appCacheState = 'error';
+                        Microloader.notifyUpdateReady()
+                    },
+                    onAppCacheReady: function() {
+                        _cache.swapCache();
+                        Microloader.appCacheUpdated()
+                    },
+                    onAppCacheObsolete: function() {
+                        Microloader.appCacheUpdated()
+                    },
+                    appCacheUpdated: function() {
+                        Microloader.appCacheState = 'updated';
+                        Microloader.notifyUpdateReady()
+                    },
+                    onAppCacheNotUpdated: function() {
+                        Microloader.appCacheState = 'current';
+                        Microloader.notifyUpdateReady()
+                    },
+                    filterAsset: function(asset) {
+                        asset = asset && asset.assetConfig || {};
+                        return asset.platform || asset.exclude ? Boot.filterPlatform(asset.platform, asset.exclude) : !0
+                    },
+                    onUpdatedManifestLoaded: function(result$jscomp$0) {
+                        result$jscomp$0 = Microloader.parseResult(result$jscomp$0);
+                        if (result$jscomp$0.error) _warn('Error loading manifest file to check for updates'), Microloader.onAllUpdatedAssetsReady();
+                        else {
+                            var include, updatingAssets = [],
+                                manifest = new Manifest({
+                                    url: Microloader.manifest.url,
+                                    content: result$jscomp$0.content,
+                                    assetCache: !1
+                                });
+                            Microloader.remainingUpdatingAssets = 0;
+                            Microloader.updatedAssets = [];
+                            Microloader.removedAssets = [];
+                            Microloader.updatedManifest = null;
+                            Microloader.updatedAssetsReady = !1;
+                            if (manifest.shouldCache())
+                                if (Microloader.manifest.is(manifest)) Microloader.onAllUpdatedAssetsReady();
+                                else {
+                                    Microloader.updatedManifest = manifest;
+                                    var currentAssets = Microloader.manifest.getAssets();
+                                    var newAssets = manifest.getAssets();
+                                    for (prop in newAssets) {
+                                        result$jscomp$0 = newAssets[prop];
+                                        var currentAsset = Microloader.manifest.getAsset(result$jscomp$0.assetConfig.path);
+                                        (include = Microloader.filterAsset(result$jscomp$0)) &&
+                                        (!currentAsset || result$jscomp$0.shouldCache() && !currentAsset.is(result$jscomp$0)) && updatingAssets.push({
+                                            _new: result$jscomp$0,
+                                            _current: currentAsset
+                                        })
+                                    }
+                                    for (prop in currentAssets) currentAsset = currentAssets[prop], result$jscomp$0 = manifest.getAsset(currentAsset.assetConfig.path), (include = !Microloader.filterAsset(result$jscomp$0)) && result$jscomp$0 && (!currentAsset.shouldCache() || result$jscomp$0.shouldCache()) || Microloader.removedAssets.push(currentAsset);
+                                    if (0 < updatingAssets.length)
+                                        for (Microloader.remainingUpdatingAssets =
+                                            updatingAssets.length; 0 < updatingAssets.length;)
+                                            if (currentAsset = updatingAssets.pop(), result$jscomp$0 = currentAsset._new, currentAsset = currentAsset._current, 'full' === result$jscomp$0.assetConfig.update || !currentAsset) Boot.fetch(result$jscomp$0.assetConfig.path, function(asset) {
+                                                return function(result) {
+                                                    Microloader.onFullAssetUpdateLoaded(asset, result)
+                                                }
+                                            }(result$jscomp$0));
+                                            else {
+                                                if ('delta' === result$jscomp$0.assetConfig.update) {
+                                                    var prop = manifest.deltas;
+                                                    prop = prop + '/' + result$jscomp$0.assetConfig.path + '/' + currentAsset.assetConfig.hash +
+                                                        '.json';
+                                                    Boot.fetch(prop, function(asset, oldAsset) {
+                                                        return function(result) {
+                                                            Microloader.onDeltaAssetUpdateLoaded(asset, oldAsset, result)
+                                                        }
+                                                    }(result$jscomp$0, currentAsset))
+                                                }
+                                            }
+                                    else Microloader.onAllUpdatedAssetsReady()
+                                }
+                            else Microloader.updatedManifest = manifest, LocalStorage.clearAllPrivate(manifest), Microloader.onAllUpdatedAssetsReady()
+                        }
+                    },
+                    onFullAssetUpdateLoaded: function(asset, result) {
+                        var checksum;
+                        result = Microloader.parseResult(result);
+                        Microloader.remainingUpdatingAssets--;
+                        result.error ? asset.uncache() : (checksum =
+                            Microloader.checksum(result.content, asset.assetConfig.hash)) ? (asset.updateContent(result.content), Microloader.updatedAssets.push(asset)) : asset.uncache();
+                        if (0 === Microloader.remainingUpdatingAssets) Microloader.onAllUpdatedAssetsReady()
+                    },
+                    onDeltaAssetUpdateLoaded: function(asset, oldAsset, result) {
+                        var checksum;
+                        result = Microloader.parseResult(result);
+                        Microloader.remainingUpdatingAssets--;
+                        if (result.error) _warn('Error loading delta patch for ' + asset.assetConfig.path + ' with hash ' + oldAsset.assetConfig.hash + ' . This asset will be uncached for future loading'),
+                            asset.uncache();
+                        else try {
+                            var json = JSON.parse(result.content);
+                            var content = Microloader.patch(oldAsset.content, json);
+                            (checksum = Microloader.checksum(content, asset.assetConfig.hash)) ? (asset.updateContent(content), Microloader.updatedAssets.push(asset)) : asset.uncache()
+                        } catch (e) {
+                            _warn('Error parsing delta patch for ' + asset.assetConfig.path + ' with hash ' + oldAsset.assetConfig.hash + ' . This asset will be uncached for future loading'), asset.uncache()
+                        }
+                        if (0 === Microloader.remainingUpdatingAssets) Microloader.onAllUpdatedAssetsReady()
+                    },
+                    onAllUpdatedAssetsReady: function() {
+                        Microloader.updatedAssetsReady = !0;
+                        if (Microloader.updatedManifest) {
+                            for (; 0 < Microloader.removedAssets.length;) {
+                                var asset = Microloader.removedAssets.pop();
+                                asset.uncache()
+                            }
+                            for (Microloader.updatedManifest && Microloader.updatedManifest.cache(); 0 < Microloader.updatedAssets.length;) asset = Microloader.updatedAssets.pop(), asset.cache()
+                        }
+                        Microloader.notifyUpdateReady()
+                    },
+                    notifyUpdateReady: function() {
+                        'checking' !== Microloader.appCacheState && Microloader.updatedAssetsReady && ('updated' ===
+                            Microloader.appCacheState || Microloader.updatedManifest ? (Microloader.appUpdate = {
+                                updated: !0,
+                                app: 'updated' === Microloader.appCacheState,
+                                manifest: Microloader.updatedManifest && Microloader.updatedManifest.exportContent()
+                            }, Microloader.fireAppUpdate()) : Microloader.appUpdate = {})
+                    },
+                    fireAppUpdate: function() {
+                        Ext.GlobalEvents && Ext.defer(function() {
+                            Ext.GlobalEvents.fireEvent('appupdate', Microloader.appUpdate)
+                        }, 1E3)
+                    },
+                    checksum: function(content, hash) {
+                        if (!content || !hash) return !1;
+                        var passed = !0,
+                            hashLn = hash.length,
+                            checksumType =
+                            content.substring(0, 1);
+                        '/' == checksumType ? content.substring(2, hashLn + 2) !== hash && (passed = !1) : 'f' == checksumType ? content.substring(10, hashLn + 10) !== hash && (passed = !1) : '.' == checksumType && content.substring(1, hashLn + 1) !== hash && (passed = !1);
+                        return passed
+                    },
+                    parseResult: function(result) {
+                        var rst = {};
+                        !result.exception && 0 !== result.status || Boot.env.phantom ? 200 <= result.status && 300 > result.status || 304 === result.status || Boot.env.phantom || 0 === result.status && 0 < result.content.length ? rst.content = result.content : rst.error = !0 :
+                            rst.error = !0;
+                        return rst
+                    }
+                };
+            return Microloader
+        }();
+        Ext.manifest = Ext.manifest || 'bootstrap';
+        Ext.Microloader.run();
+    </script>
+
+
+    <!-- Orbit utilities js  -->
+    <script type="text/javascript" src='/reporting/resources/js/orb-utilities-65f188f09339a534c8122605410e498b.js'></script>
+
+    <style type="text/css">
+        .gshDisplay {
+            /*GoJs License CSS*/
+            border-color: #6ebc8e;
+            font-size: 15;
+            margin-bottom: 11;
+        }
+    </style>
+
+    <link rel="stylesheet" href='/reporting/resources/css/visualizations-fee3970d0c1b46f48aa779fba86c1659.css'>
+    <link rel="stylesheet" href='/reporting/resources/css/card-layout-styles-f707754af5d5c7d6f1f2ba236d7e9165.css'>
+
+    <script src='/reporting/resources/js/hilitor-875eb7cb49098d4eae9d39806774763f.js'></script>
+
+    <!-----------------------(OISR-4332) ----------------------------------------------->
+    <script src='/reporting/resources/js/jquery-3.6.0.min-0732e3eabbf8aa7ce7f69eedbd07dfdd.js'></script>
+    <script src='/reporting/resources/js/jquery-ui.min-bcad1d60cf9cb3bb180a1a8339ed5529.js'></script>
+    <script src='/reporting/resources/js/lodash.min-5ded17f20ec6c3ab1c274966d3a3a1d6.js'></script>
+    <script src='/reporting/resources/js/beautify-html-209a76677dad50aaeb559b211a18ba70.js'></script>
+
+
+    <!-----------------------GridStack version 0.2.6 (OISR-4332) ----------------------------------------------->
+    <script src='/reporting/resources/gridstack/gridstack.min-beb51f5581d5dcde50dc23f26f52b2ce.js'></script>
+    <link rel="stylesheet" href='/reporting/resources/gridstack/gridstack.min-d56d75a8942bbd39cd68030d5fe7f9d0.css'>
+
+    <!-----------------------custom scrollbars version 3.1.13 ----------------------------------------------->
+    <link rel="stylesheet" href='/reporting/resources/css/jquery.mCustomScrollbar-295351a5027c5ad6256f3389ab471cfb.css'>
+    <script src='/reporting/resources/js/jquery.mCustomScrollbar.concat.min-9df3cfdcc9b72f1aa24e2e114455ae7a.js'></script>
+
+    <!--  card widget -->
+    <script src='/reporting/resources/js/fontfitresize-2a626a4ac3697c7295f36fce18aa10e2.js'></script>
+
+    <!--Annotorious libs  -->
+    <script type="text/javascript" src='/reporting/resources/annotorious-0.6.4/annotorious.min-4c6557bc21fc1fafc1cc61f5261fa37b.js'></script>
+    <script type="text/javascript" src='/reporting/resources/annotorious-0.6.4/anno-fancybox.min-24025e79db850253b79421ea8104d3d9.js'></script>
+    <link type="text/css" rel="stylesheet" href='/reporting/resources/annotorious-0.6.4/css/annotorious-8d0ae77eede7a5739fdf4c2dbad55f6a.css'>
+    <script src='/reporting/resources/annotorious-0.6.4/imagesloaded.pkgd.min-81545aed80e2c8b710b729bea178621b.js'></script>
+    <script src='/reporting/resources/js/cronstrue.min-91232a09a4508870dd03e372083623db.js'></script>
+    <script src='/reporting/resources/editor/sql-formatter.min-4df46567a887db417b9bd7ea4b18b6be.js'></script>
+
+    <!-- Jodit editor libs-->
+    <link type="text/css" rel="stylesheet" href='/reporting/resources/joditeditor/jodit.min-a6401a6b19393b3d7ee9dcb47875059e.css'>
+    <script type="text/javascript" src='/reporting/resources/joditeditor/jodit.min-e494d69f7ba63f30996380467b4e78b1.js'></script>
+
+    <!--newly downloaded js files from highcharts.com -->
+    <script src='/reporting/resources/highcharts/stock/highstock-58e54fb25473ad3a216dba373d0bcdd1.js'></script>
+    <script src='/reporting/resources/highcharts/modules/map-0d6a79a27e590bd8a3578aed7718c479.js'></script>
+    <script src='/reporting/resources/highcharts/modules/variable-pie-cd4c764a364508513235a7fd5a892161.js'></script>
+    <script src='/reporting/resources/highcharts/modules/heatmap-05fd87cbb6addb270db1ab224567a7a9.js'></script>
+    <script src='/reporting/resources/highcharts/modules/treemap-299d43ad8b524f1963b21bbc11a6be31.js'></script>
+    <script src='/reporting/resources/highcharts/modules/sunburst-99ff228115eed05f7df0edaec16c58a1.js'></script>
+    <script src='/reporting/resources/highcharts/highcharts-3d-1e175957b100c110f56df2f4d21e8c67.js'></script>
+    <script src='/reporting/resources/highcharts/highcharts-more-b129c302ac18f8485d0a6b44c728a674.js'></script>
+    <script src='/reporting/resources/highcharts/modules/series-label-87bc03af23f31b04895dab3464c17e84.js'></script>
+    <script src='/reporting/resources/highcharts/modules/exporting-2f221bb91b4f099815a2005f7640286f.js'></script>
+    <script src='/reporting/resources/highcharts/modules/export-data-2d9ef2ad0455df52dd6945278c6b7109.js'></script>
+    <script src='/reporting/resources/highcharts/modules/data-5f449ef2aaacc90af30ca683ce55a5b1.js'></script>
+    <script src='/reporting/resources/highcharts/modules/wordcloud-63620b82a138f5f72b153aceac97f187.js'></script>
+    <script src='/reporting/resources/highcharts/modules/solid-gauge-447801685f3f81bd3dc7879a47651a18.js'></script>
+    <script src='/reporting/resources/highcharts/modules/sankey-d87eca41d3f0d7d7a9be425b0350b5a6.js'></script>
+    <script src='/reporting/resources/highcharts/maps/mapdata-b4b0a4315685418a5019c3d23cddc257.js'></script>
+
+    <!--  Custom plugins -->
+    <script src='/reporting/resources/highcharts/modules/grouped-categories-86cb12af75613259d1f9e4b30c90c5f9.js'></script>
+    <script src='/reporting/resources/highcharts/modules/customEvents.min-8ac63a871719d09c1f4759a2cd5ab8e5.js'></script>
+    <script src='/reporting/resources/highcharts/modules/tooltip-delay-b791ce3129f66772f889f4eac0fe0b0a.js'></script>
+    <!--old downloaded js files from highcharts.com -->
+    <script src='/reporting/resources/highcharts/modules/drilldown-fab1b130a33142c9188c4fa392f539a1.js'></script>
+    <script src='/reporting/resources/prism-sql-highlighter/prism-d23e824fb3a093390f98050f30e5c9cc.js'></script>
+    <link type="text/css" rel="stylesheet" href='/reporting/resources/prism-sql-highlighter/prism-c6d6d50aaafaee192f877f942aac8636.css'>
+    <link rel="stylesheet" href='/reporting/resources/css/c3.min-9d07f0a0e925333fa9c68f1b204a13ab.css'>
+    <script src='/reporting/resources/js/custom_widget/d3-22034613d2074c8623d38a2346155af6.js'></script>
+    <script src='/reporting/resources/js/custom_widget/c3-9358593730213136fd3c321a493f1a3a.js'></script>
+    <script src='/reporting/resources/js/custom_widget/chart-22355edefc13ac72f4609b189eeee74e.js'></script>
+    <script src='/reporting/resources/js/custom_widget/chartist-b40e8baba265709a37f99b93b679a08a.js'></script>
+    <link rel="stylesheet" href='/reporting/resources/js/custom_widget/chartist-0d6caf50a899aab4422a3afcfa80f4d7.css'>
+    <script src='/reporting/resources/js/custom_widget/google-8fa7d68442e620722df450b9fec8c510.js'></script>
+    <script src='/reporting/resources/spreadjs/sheetjs_loader-cf8397ff830785f70ab8e8d0ee35e668.js'></script>
+
+    <!-- moment js for Getting Local Timezone -->
+    <script src='/reporting/resources/moment/moment.min-d3863afb7f43b369e3a9e42f14dbd267.js'></script>
+    <script src='/reporting/resources/moment/moment-timezone-with-data-4cd200889f13ab785bb85d2c166b31d5.js'></script>
+    <!-- script src='/reporting/resources/js/html2canvas.min-a712b48a2a8215959372798511062594.js'></script>
+<script src='/reporting/resources/js/jspdf.min-727a7f0069d4000953ae2a1e6d4dd4fe.js'></script-->
+
+
+    <script type="text/template" id="dashboard-custom-theme-template">
+        .$theme-name{background-color: $dashbordThemeBgColor !important; } .$theme-name .x-panel-body-default:first-child{background-color: $dashbordThemeBgColor !important;} .$theme-name .grid-stack-item-content{-webkit-box-shadow: $dashbordPortletDropShadow
+        !important; box-shadow:$dashbordPortletDropShadow !important;} /*.$theme-name .grid-stack-item-content .x-panel-header-default{ background-color: $dashbordPortletBgColor !important;}*/ .$theme-name .grid-stack-item-content .x-panel-header-default
+        .x-panel-header-title-default{color: $dashbordPortletTitleFontColor !important; font-size: $dashbordPortletTitleFontSizepx !important; font-style :$dashbordPortletTitleFontStyle; font-weight: $dashbordPortletTitleFontWeight;text-transform:$dashbordPortletTitleFontTransform;
+        font-family: $dashbordPortletTitleFontName; text-decoration: $dashbordPortletTitleFontTextDecoration; } .$theme-name .grid-stack-item-content .x-panel-header-default{background-color: $dashbordPortletTitleBGColor !important; } .$theme-name .grid-stack>.grid-stack-item>.grid-stack-item-content{outline:
+        $dashbordPortletWidthBorderpx $dashbordPortletcolorBorder $dashbordPortletStyleBorder !important;} .dashboard-edit-mode .$theme-name .grid-stack>.grid-stack-item>.grid-stack-item-content.grd-inr-cnt-select{outline: $dashbordPortletSelectWidthBorderpx
+        $dashbordPortletSelectColorBorder $dashbordPortletSelectStyleBorder !important;} .dashboard-edit-mode .$theme-name .grid-stack>.grid-stack-item>.grid-stack-item-content:hover{outline: $dashbordPortletHoverWidthBorderpx $dashbordPortletHoverColorBorder
+        $dashbordPortletHoverStyleBorder!important;} /*.$theme-name .card-cnt, .$theme-name .orb-simple-card .card-value-field-color{background-color:$dashbordPortletBgColor !important; }*/ .$theme-name .card{color: $cardMainColor !important; border:none
+        !important; } .$theme-name .orb-simple-card .card-value-field-color{color: #E0E0E3 !important; border:none !important; } /*.$theme-name .grid-stack>.grid-stack-item>.grid-stack-item-content .x-panel-body-default{background-color:$dashbordPortletBgColor
+        !important; padding: 0px !important;}*/ .$theme-name .x-grid-scroll-container{background-color: #39393b !important; } .$theme-name .x-form-checkboxgroup .x-form-cb-label-default{color:#E0E0E3 !important;} .$theme-name .grid-stack-container .x-menu-body-default{background-color:
+        $dashbordThemeContextMenuBgColor !important;} .$theme-name .x-menu-item-default.x-menu-item-focus, .$theme-name .x-menu-item-default.x-menu-item-active {background-color:$dashbordThemeContextMenuBgColorHover !important;} .$theme-name .x-column-header-trigger
+        {background-color: #f6a821 !important;} .$theme-name .x-btn-default-small{ background-color: $dashbordThemeButtonBgColor !important; border-color:$dashbordThemeButtonBorder !important;} .$theme-name .x-btn-default-small.x-segmented-button-item{background-color:
+        $dashbordThemeSegmentedButtonBgColor !important; border-color:$dashbordThemeButtonBorder !important;} .$theme-name .x-btn-inner-default-small{color: $dashbordThemeButtonTextColor !important;} .$theme-name .x-btn-default-small:hover{ background-color:$dashbordThemeButtonBgColor
+        !important; border-color: $dashbordThemeButtonBorderColor !important;} .$theme-name .orb-modern-card .card-value-sub-title {color: $cardSubValue !important;} .$theme-name .x-btn-default-small.x-segmented-button-item.x-btn-pressed{background-color:$dashbordThemeSegmentedButtonBgColor
+        !important; color: $dashbordThemeSegmentedButtonTextColor !important;} .$theme-name .x-column-header-over{background-color:$dashbordThemeSegmentedButtonBgHoverColor !important; } .$theme-name .x-grid-with-row-lines .x-grid-item.x-grid-item-selected,
+        .$theme-name .x-grid-row .x-grid-cell-selected {background-color: $dashbordThemeGridSelecColomtBgColor !important; } .x-menu.$theme-name-cnt-menu .x-menu-body-default{background-color: $dashbordThemeContextMenuBgColor !important; } .x-menu.$theme-name-cnt-menu.x-menu-default{
+        border:$dashbordThemeContextMenuBorder!important;} .x-menu.$theme-name-cnt-menu .x-menu-item-default.x-menu-item-separator{margin:0px !important; height:0px; border-top: solid 1px $dashbordThemeContextSeparatorColorMenu !important; background-color:transparent
+        !important} .x-menu.$theme-name-cnt-menu .x-menu-body-default .x-menu-item-text-default{color:$dashbordThemeContextMenuTextColor !important;} .x-menu.$theme-name-cnt-menu .x-menu-item-default.x-menu-item-focus, .x-menu.$theme-name-cnt-menu .x-menu-item-default.x-menu-item-active
+        {background-color:$dashbordThemeContextMenuBgColorHover !important; } .x-menu.$theme-name-cnt-menu .x-menu-item-default.x-menu-item-focus .x-menu-item-text-default, .x-menu.$theme-name-cnt-menu .x-menu-item-default.x-menu-item-active .x-menu-item-text-default{
+        color: $dashbordThemeContextMenuHoverTextColor !important;} .$theme-name .x-toolbar-default{padding: 0px !important; background: transparent;} .$theme-name .filter-list .x-toolbar-default{padding-top: 8px !important;} .table-header-context-menu
+        .x-menu-body-default{background-color: #232323 !important; } .table-header-context-menu .x-menu-item-text-default{color:#e2e2e2 !important;} .table-header-context-menu .x-menu-item-default.x-menu-item-focus, .table-header-context-menu .x-menu-item-default.x-menu-item-active
+        {background-color: #f6a821 !important;} .table-header-context-menu .x-menu-item-default.x-menu-item-focus, .table-header-context-menu .x-menu-item-default.x-menu-item-active{background-color: #f6a821 !important;} /*.$theme-name .grid-stack-container
+        .x-form-item .x-form-text-default{background-color: $dashbordPortletBgColor!important;}*/ /*.$theme-name .grid-stack-container .x-form-item .x-form-trigger-default{background-color: $dashbordPortletBgColor !important;}*/ .$theme-name .grid-stack-container
+        .x-form-item .x-form-text-default .x-tagfield-item{background-color: #f6a821 !important; border: 1px solid #ffc767 !important;} .$theme-name .grid-stack-container .x-form-item .x-form-trigger-wrap-default{border: solid 1px #545454 !important;
+        } .$theme-name .x-pivot-grid .x-toolbar-default{background-color: $dashbordThemeGridColomtBgColor !important;} .$theme-name .x-pivot-grid .x-grid-header-ct, .$theme-name .x-pivot-grid .x-grid-item, .$theme-name .x-grid-scrollbar-clipper > .x-grid-view,
+        .x-grid-scrollbar-clipper > .x-tree-view{background-color: $dashbordThemeGridColomtBgColor !important;} .$theme-name .result-grid .x-grid-cell-inner, .$theme-name .dashboard-result-grid .x-pivot-grid-group-title, .$theme-name .dashboard-result-grid
+        .x-pivot-grid-grand-total .x-column-header-inner, .$theme-name .dashboard-result-grid .x-pivot-grid-grand-total .x-grid-cell-inner, .$theme-name .dashboard-result-grid .x-pivot-grid-group-total .x-grid-cell-inner, .$theme-name .dashboard-result-grid
+        .x-pivot-grid-group-total .x-column-header-inner{color:$dashbordThemeGridColomtTextColor !important;} .$theme-name .dashboard-result-grid .x-column-header, .$theme-name .dashboard-result-grid .x-grid-item, .$theme-name .dashboard-result-grid .x-grid-cell-row-numberer,
+        .$theme-name .dashboard-result-grid .x-grid-header-ct, .$theme-name .dashboard-result-grid .x-panel-body-default{background-color:$dashbordThemeGridColomtBgColor !important;} .$theme-name .x-pivot-grid .x-grid-with-col-lines .x-grid-cell{border:
+        $dashbordThemeGridColomtBorder!important; border-top:none !important; border-bottom: none !important; } .$theme-name .x-pivot-grid .x-grid-with-row-lines .x-grid-item, .$theme-name .x-pivot-grid .x-column-header{border-color:$dashbordThemeGridColomtBorderColor
+        !important;} .$theme-name .x-pivot-grid a{color: #f6a821 !important} .$theme-name a:active, .$theme-name a:visited {color: #cc7900 !important} .$theme-name .x-grid-scrollbar-clipper-locked {background-color: #2f2f30 !important;} .$theme-name .x-grid-header-ct
+        .x-column-header-text-container{ color: $dashbordThemeGridColomtTextColor !important} .$theme-name .x-column-header-open{background-color: #f6a821 !important;} .$theme-name .card-vtl-tpl-title{color: #f6a821 ;} .$theme-name .drilldown-tollbar
+        .x-btn.btn-act-cls.x-btn-pressed .x-btn-icon-el{color: $dashbordThemeButtonBorderHoverColor !important} .$theme-name .drilldown-tollbar{background-color:$dashbordToolBarBgColor} .$theme-name .x-btn-default-small.btn-act-cls, .$theme-name .x-btn.btn-act-cls{background-color:$dashbordThemeButtonBgColor20
+        !important;} .$theme-name .drilldown-tollbar .x-btn.btn-act-cls.x-btn-pressed{background-color: #6d6d6d !important} .$theme-name .hier-bread-crumb .x-breadcrumb-btn .x-btn-inner-plain-toolbar-small{ color: #b9b9b9 !important} .$theme-name .hier-bread-crumb:after{border:
+        10px solid #39393b;} .$theme-name .hier-bread-crumb{border: solid 1px #757575;} .$theme-name .hier-bread-crumb:before{ border: 11px solid #757575;border-right-color: transparent;border-bottom-color: transparent;} .$theme-name .hier-bread-crumb
+        .x-breadcrumb-btn:hover .x-btn-inner-plain-toolbar-small{text-decoration: underline; color:#f6a821 !important;} .$theme-name .x-btn-default-small.btn-act-cls .x-btn-icon-el, .$theme-name .x-btn.btn-act-cls .x-btn-icon-el{color: #b5b5b5 !important}
+        .$theme-name .x-btn-default-small.btn-act-cls:hover, .$theme-name .x-btn.btn-act-cls:hover {background: $dashbordThemeButtonBorderHoverColor40 !important} .$theme-name .x-btn-default-small.btn-act-cls:hover .x-btn-icon-el, .$theme-name .x-btn.btn-act-cls:hover
+        .x-btn-icon-el{color: $dashbordThemeButtonBorderHoverColor !important} .$theme-name .x-btn-over.x-btn-default-small.tbl-ft-icon-close-clm .x-btn-icon-el-default-small, .$theme-name .tbl-ft-icon-clm.x-btn-over.x-btn-default-small .x-btn-icon-el-default-small{color:
+        #f6a821 !important;} .$theme-name .filter-circle-icon{background-color: #f6a821 !important} .$theme-name .portlet-actions .ORBIT-Icons{color:$dashbordThemePortletActionsIconsColor !important} .$theme-name .portlet-actions .ORBIT-Icons:hover{ color:$dashbordThemePortletActionsIconsHoverColor
+        !important} .$theme-name .orb-modern-card .card-value-title{font-weight: $cardValueTitleWeight; font-size: 16px; color: $cardValueColorTitle;} .$theme-name .drilldown-tollbar .x-btn.btn-act-cls.x-btn-pressed .x-btn-icon-el{color: $dashbordThemeButtonBorderHoverColor
+        !important} .$theme-name .drilldown-tollbar .x-btn.btn-act-cls.x-btn-pressed{background-color: $dashbordThemeButtonBorderHoverColor40 !important} .$theme-name .card-cnt{background-color: $cardBgColor !important} .$theme-name .orb-modern-card .card-main-value-cnt{color:
+        $cardMainFontColor!important; font-family: $cardMainFontName !important; font-weight: $cardMainFontWeight!important;} .$theme-name .orb-modern-card .card-value-sub-title{color: $cardSubValueFontColor!important; font-family: $cardSubValueFontName
+        !important; font-weight: $cardSubValueFontWeight !important;} .$theme-name .card-hzt-value-column{color: $cardMainFontColor!important;} .$theme-name .card-vtl-tpl-title{color: $cardSubValueFontColor!important;} .$theme-name .card-hzt-label{color:
+        $cardValueTitleFontColor !important;} .$theme-name .card-vtl-tpl-value{color: $cardMainFontColor!important;} .$theme-name .grid-stack-container .x-panel-header-title-default > .x-title-text-default{text-align: $dashbordPortletalignTitle !important;}
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <!--Loading Splash Screen here -->
+    <div id="loading-mask"></div>
+    <div id="loading-parent">
+        <div id="loading-child" class="loading-indicator">
+            <div class="loader" style="margin: 0px auto; width: 60px;">
+                <div class="intro-banner-vdo-play-btn bluerplBg" target="_blank">
+                    <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
+                    <span class="ripple bluerplBg"></span>
+                    <span class="ripple bluerplBg"></span>
+                    <span class="ripple bluerplBg"></span>
+                </div>
+            </div>
+            <br> <br> <br> <br>
+
+
+            <div style="text-align:center;">
+                <h1 class="loading-mask-title">ORBIT Analytics..</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

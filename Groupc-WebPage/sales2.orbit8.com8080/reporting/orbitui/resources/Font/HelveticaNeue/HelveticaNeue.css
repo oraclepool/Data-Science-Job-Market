@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold-5eacbf5772beeaedb799fd3cbbd6b484.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold-d518db4d2a2c0a061e1e17c38c1ff5ef.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold-cb975ca3f49300764658cd4737712210.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold-260ef0a2cf79ffca8d9829dd13906a85.svg#HelveticaNeue-Bold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-aa01b0b61afce203afdd1cc1b90937a2.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-2d1c965b9f28eca0d3286fa43d1a5f95.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-b32a74e84e5a180475b42cf9c6cbf236.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-87e6846c97d9565acafab0739effaddc.svg#HelveticaNeue") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLightItalic-c106b5e8b5c4043509a09e459dc37d11.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLightItalic-c2398b2315db8a7ba7010397aa0d7d13.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLightItalic-09f84534c1a932694626561a05a22714.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLightItalic-f10542375f779ed2da25204e54da5dbc.svg#HelveticaNeue-UltraLightItalic") format("svg");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Medium-5c8f3e912d9273ac7e8c47ffa7d1d159.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Medium-6af3d5f0da74550bf05cf38f2f24a8e3.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Medium-5b058d938ccbd044c00fdef2aef28b0d.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Medium-18eff5e96d4190178b8c73ce28879268.svg#HelveticaNeue-Medium") format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBold-bed53a5a3e65c5aed75374ab4bffa7c7.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBold-852c51c32d79448d6aa8aeea919f49ef.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBold-9ce006217908e771b910715e36157c67.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBold-aad944ed123cea3e03264c1033d246e1.svg#HelveticaNeue-CondensedBold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-LightItalic-8e1ff3c68f6941a46031e11ea9b141a7.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-LightItalic-89490f1f7234a7f4085eecc07aeb4b73.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-LightItalic-7ca3f073a7645b37d5926ca82b9b6d49.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-LightItalic-d9f9859d8e1dfc8d523fba89291f7bee.svg#HelveticaNeue-LightItalic") format("svg");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-BoldItalic-18dc1217d34a89b6b7bd41589bdb5b31.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-BoldItalic-6f20fde6dd9827c1ab5fb750c711a422.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-BoldItalic-1610ecc672522d000d436a50febced20.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-BoldItalic-2c7e7b5b60e8e61d236e304cfd8a7c72.svg#HelveticaNeue-BoldItalic") format("svg");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Italic-1d19583050213da41de59a460da9f62d.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Italic-dc6e0db88257a53a2422b00cb490684a.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Italic-a3d77cb5da7c7861660ade8460beee31.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Italic-e09eb8c69f69bf97406338ac95ef83b1.svg#HelveticaNeue-Italic") format("svg");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBlack-b2db7ffc1d140d9cbbfad4cda88f6d62.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBlack-88b94c2eced603c82e6daa6be7309a00.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBlack-a742cc21361894b7302e4eea26504732.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-CondensedBlack-a064ed71a568da3aa13746c64d1c4e1c.svg#HelveticaNeue-CondensedBlack") format("svg");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Light-2f57b3e730f96aa4d74ef33055c60f33.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Light-fc76584e57233d7f31b0f64f326ade76.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Light-876aee7687b505d6ea7eaa95ea27ca9c.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Light-8e7face960ac3821b5031b3b4484e780.svg#HelveticaNeue-Light") format("svg");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue_1-2422be6b4f5750f40af742a0a7960393.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue_1-5441d7c062af3516610312747ce71420.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue_1-603db9f994cd5c45a6b19fc460f8a2ba.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue_1-a2cdda54a6c8712e372a2602d71a8287.svg#HelveticaNeue") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLight-49879614119a12d53c2827961e39e267.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLight-d42ca227c02f2258e46657e33ea44d32.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLight-c07ab97bd84b755dd4ac6144b76b9580.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-UltraLight-5a8e44637d568d83127ef80289771b53.svg#HelveticaNeue-UltraLight") format("svg");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold_1-113ae1c9fc72ad80648c6335cc57d60d.woff2") format("woff2"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold_1-a0076314ca1fcdac16a42ab978886502.woff") format("woff"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold_1-19921b45dda8d867fcfd411dfb2f22df.ttf") format("truetype"), url("/reporting/orbitui/resources/Font/HelveticaNeue/HelveticaNeue-Bold_1-665cb5056ef22abda8cafbf249b5c337.svg#HelveticaNeue-Bold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}

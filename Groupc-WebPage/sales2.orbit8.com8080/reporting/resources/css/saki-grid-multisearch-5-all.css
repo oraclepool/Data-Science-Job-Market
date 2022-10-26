@@ -1,0 +1,67 @@
+.saki-gms-ct+div {
+    border-top-width: 0px;
+}
+
+.saki-gms-ct {
+    background-color: white;
+    border-width: 0px 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-right-color: rgb(153, 188, 232);
+    border-left-color: rgb(153, 188, 232);
+    border-bottom-style: initial;
+    border-bottom-color: initial;
+    border-top-style: initial;
+    border-top-color: initial;
+}
+
+.saki-gms-ct .x-form-trigger-wrap-default {
+    border-left-width: 0px;
+}
+
+.saki-gms-ct .x-form-trigger-wrap-default.x-form-trigger-wrap-focus {
+    border-left-width: 1px;
+}
+
+.saki-gms-nofilter {
+    background-color: rgb(245, 245, 245);
+    border-color: rgb(206, 206, 206);
+    border-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+}
+
+.saki-gms-clear {
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAABNElEQVQYlXWQUUvDMACEv2aZq7VpnaVDNjsVrf//72gFcVFhdJtuqcVIlvqgThS8x7vj7riAL7y2bbdcLmmahq1z9KQkjmOyLOMgigKAAGC9Xm+11sJ7z18IISiKwqdp2hNv1nZaa+EJOTrc/2UMkyNC4dFaizdrO7Goa7z3RPmYSXHJyWEfgH46oTydMMkivPcs6hppjAGgnd+i+yVFcQWDNeloyPvLI9W8BcAYg3DO7WpfHioeDAxHQ0TzxLVe7TTnHEJK+bMxO+VEQbNp8PGYszzaaVJKhFLqy3hOOU541jfc3d9xM1uhji+4yEMAlFIE1tquqio8feLQ0bTbXVpvP2bvvcF2grIsP3/ebDbb2Wz278/T6dQnSdILvklrbVfXNcYYnHNIKVFKkec5g8EgAPgAu0uKVJCfBBYAAAAASUVORK5CYII=");
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 150ms linear 0s;
+    opacity: 0;
+}
+
+input[role="combobox"]+div.saki-gms-clear {
+    right: 0px;
+}
+
+.saki-gms-hasvalue:hover .saki-gms-clear {
+    visibility: visible;
+    transition: all 150ms linear 0s;
+    opacity: 1;
+}
+
+.saki-gms-filtered {
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(5, 43, 217);
+}
+
+.x-tool .saki-gms-icon {
+    margin: 3px 1px 4px 3px;
+    cursor: pointer;
+}
